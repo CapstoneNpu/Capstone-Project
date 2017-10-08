@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="btn_map_homePage_id" type="id">btnMapHomePage</item>
+    <item name="btn_social_media_homepage_id" type="id">btnSocialMediaHomePage</item>
+    <item name="btn_shuttle_homepage_id" type="id">btnShuttleHomePage</item>
+    <item name="btn_event_homepage_id" type="id">btnEventHomePage</item>
+    <item name="btn_news_homepage_id" type="id">btnNewsHomePage</item>
+    <item name="btn_course_homepage_id" type="id">btnCourseHomePage</item>
+    <item name="btn_login_homepage_id" type="id">btnLoginHomePage</item>
+</resources>
