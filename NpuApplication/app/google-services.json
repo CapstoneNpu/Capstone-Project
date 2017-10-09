@@ -1,0 +1,152 @@
+{
+  "project_info": {
+    "project_number": "819219519481",
+    "firebase_url": "https://npu-application-77804.firebaseio.com",
+    "project_id": "npu-application-77804",
+    "storage_bucket": "npu-application-77804.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819219519481:android:0499f4345c86b0ff",
+        "android_client_info": {
+          "package_name": "com.project.capstone.npuapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819219519481-5qapgclijtetjbu0eg0crs1lvo8f5u1i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.project.capstone.npuapplication",
+            "certificate_hash": "fd72f895e743327864662b3579c86701f69c60ba"
+          }
+        },
+        {
+          "client_id": "819219519481-1oi4hccs16ecrchqnm2fvg6sc0sgnnld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGEc3VJjkTZ_kxpsXSqb2AK3s3KnDEUt0"
+        },
+        {
+          "current_key": "AIzaSyBgqJ1pDw_kaLGMqasmd7x8U3SfnAbU6V0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819219519481-1oi4hccs16ecrchqnm2fvg6sc0sgnnld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819219519481:android:2196aa7664b2e3c5",
+        "android_client_info": {
+          "package_name": "com.example.pranali.npu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819219519481-nbcjai1fbgvnlnle8r3n3k8hdgm8hrg1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pranali.npu",
+            "certificate_hash": "fd72f895e743327864662b3579c86701f69c60ba"
+          }
+        },
+        {
+          "client_id": "819219519481-1oi4hccs16ecrchqnm2fvg6sc0sgnnld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGEc3VJjkTZ_kxpsXSqb2AK3s3KnDEUt0"
+        },
+        {
+          "current_key": "AIzaSyBgqJ1pDw_kaLGMqasmd7x8U3SfnAbU6V0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819219519481-1oi4hccs16ecrchqnm2fvg6sc0sgnnld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819219519481:android:7a6f030058b338cd",
+        "android_client_info": {
+          "package_name": "course.android.com.npuapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819219519481-d6d96q7f0to5hn75a8irl2opkps49mb8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "course.android.com.npuapplication",
+            "certificate_hash": "fd72f895e743327864662b3579c86701f69c60ba"
+          }
+        },
+        {
+          "client_id": "819219519481-1oi4hccs16ecrchqnm2fvg6sc0sgnnld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGEc3VJjkTZ_kxpsXSqb2AK3s3KnDEUt0"
+        },
+        {
+          "current_key": "AIzaSyBgqJ1pDw_kaLGMqasmd7x8U3SfnAbU6V0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819219519481-1oi4hccs16ecrchqnm2fvg6sc0sgnnld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

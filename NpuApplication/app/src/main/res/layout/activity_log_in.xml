@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="course.android.com.npuapplication.LogInActivity">
+
+    <EditText
+        android:id="@+id/edit_text_username_login"
+        android:layout_width="@dimen/txt_field_login_width"
+        android:layout_height="@dimen/txt_field_login_height"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:fontFamily="@string/font_family"
+        android:hint="@string/txt_user_name_hint"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_password_login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_text_password_login"
+        android:layout_width="@dimen/txt_field_login_width"
+        android:layout_height="@dimen/txt_field_login_height"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:fontFamily="@string/font_family"
+        android:hint="@string/txt_password_hint"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:password="true"
+        app:layout_constraintBottom_toTopOf="@+id/btn_forgot_password_login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="85dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:fontFamily="@string/font_family"
+        android:onClick="btn_login_onClick"
+        android:text="@string/btn_txt_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btn_forgot_password_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/transparent"
+
+        android:text="@string/btn_forgot_password_login"
+        android:textColor="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/txtview_login_error_msg_id"
+        android:layout_width="302dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:fontFamily="@string/font_family"
+        android:text="@string/txtview_login_error_msg"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="@dimen/txt_size"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_username_login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</android.support.constraint.ConstraintLayout>
