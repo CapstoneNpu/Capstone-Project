@@ -7,20 +7,34 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
+import course.android.com.npuapplication.Database.CourseData;
 import course.android.com.npuapplication.HelpingFunctions.ExpandableListCreation;
 
 public class CourseDetailsActivity extends AppCompatActivity {
 
-    //variables for expandable list view, keys of HashMap should be elements of listHeaderStringArray String Array
-    String[] listHeaderStringArray = {"WeeklyInfo", "TeachingInfo"};
+    //variables for expandable list view, keys of HashMap should be elements of listHeader
+    List<String> listHeader;
     HashMap<String, List<String>> listChildArg;
+    HashMap<String, String> listDataFromDatabase;
 
     private Intent intentFromCurrentSemesterCourseList;
     private ExpandableListCreation expandableListCreationObj;
+    private CourseData courseDataObj;
+    private String courseId;
+
+    //firebase reference objects
+    private FirebaseDatabase firebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,28 +42,48 @@ public class CourseDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_course_details);
 
         intentFromCurrentSemesterCourseList = getIntent();
-        String courseId = intentFromCurrentSemesterCourseList.getStringExtra("CourseId").toString();
+        courseId = intentFromCurrentSemesterCourseList.getStringExtra("CourseId").toString();
 
-        listChildArg = new HashMap<>();
-        fillChildHashMap();
-        expandableListCreationObj = new ExpandableListCreation();
-        expandableListCreationObj.createExpandableListView(this, listHeaderStringArray, listChildArg);
+        courseDataObj = new CourseData();
+        listHeader = new ArrayList<>();
+
+        //firebase database reference object
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference();
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                courseDataObj.setAllCourseInfo(courseDataObj.fetchAllCourseData(dataSnapshot));
+                courseDataObj.setSelectedCourseInfo(courseDataObj.fetchSelectedCourseInfo(courseId));
+                listDataFromDatabase = courseDataObj.fetchCourseDetailsForCourseDetailsPage();
+
+                listChildArg = new HashMap<>();
+                fillChildHashMap();
+                expandableListCreationObj = new ExpandableListCreation();
+                expandableListCreationObj.createExpandableListView(CourseDetailsActivity.this, listHeader, listChildArg);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void fillChildHashMap() {
 
-        List<String> subItemList1 = new ArrayList<>();
-        subItemList1.add("Week1");
-        subItemList1.add("Week2");
-        subItemList1.add("Week3");
-        subItemList1.add("Week4");
-        subItemList1.add("Week5");
-        listChildArg.put(listHeaderStringArray[0], subItemList1);
-
-        List<String> subItemList2 = new ArrayList<>();
-        subItemList2.add("TextBook");
-        subItemList2.add("ReferenceBook");
-        listChildArg.put(listHeaderStringArray[1], subItemList2);
+        if (listDataFromDatabase != null) {
+            Iterator listHeaderIterator = listDataFromDatabase.entrySet().iterator();
+            while (listHeaderIterator.hasNext()) {
+                HashMap.Entry pair = (HashMap.Entry) listHeaderIterator.next();
+                listHeader.add(pair.getKey().toString());
+                List<String> subItemList = new ArrayList<>();
+                subItemList.add(pair.getValue().toString());
+                listChildArg.put(pair.getKey().toString(), subItemList);
+            }
+        }
     }
 
     @Override
