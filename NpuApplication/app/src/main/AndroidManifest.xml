@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LogInActivity" />
+        <activity android:name=".EventActivity" />
+        <activity android:name=".CurrentSemsterCourseListActivity" />
+        <activity android:name=".CourseDetailsActivity" />
+        <activity android:name=".GradesActivity" />
+        <activity android:name=".AttendanceActivity" />
+        <activity android:name=".HandoutActivity" />
+        <activity android:name=".SyllabusActivity"></activity>
     </application>
 
 </manifest>

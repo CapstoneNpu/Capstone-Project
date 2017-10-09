@@ -8,4 +8,10 @@
     <item name="btn_news_homepage_id" type="id">btnNewsHomePage</item>
     <item name="btn_course_homepage_id" type="id">btnCourseHomePage</item>
     <item name="btn_login_homepage_id" type="id">btnLoginHomePage</item>
+    <item name="edit_text_username_login" type="id">editTextUserNameLogin</item>
+    <item name="edit_text_password_login" type="id">editTextPasswordLogin</item>
+    <item name="btn_login" type="id">btnLogin</item>
+    <item name="btn_forgot_password_login" type="id">btnForgotPasswordLogin</item>
+    <item name="txtview_login_error_msg_id" type="id">txtViewErrorMsg_Login</item>
+    <item name="btn_logout_homepage_id" type="id">btnLogoutHomePage</item>
 </resources>

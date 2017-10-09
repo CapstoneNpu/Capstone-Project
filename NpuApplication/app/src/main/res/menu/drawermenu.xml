@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/cs" android:title="My Course" android:icon="@drawable/ic_android_black_24dp"></item>
+
+    <item android:id="@+id/at" android:title="Attendance" android:icon="@drawable/ic_android_black_24dp"></item>
+    <item android:id="@+id/gd" android:title="Gardes" android:icon="@drawable/ic_android_black_24dp"></item>
+    <item android:id="@+id/fe" android:title="Fees" android:icon="@drawable/ic_android_black_24dp"></item>
+    <item android:id="@+id/hw" android:title="Homework" android:icon="@drawable/ic_android_black_24dp"></item>
+</menu>
