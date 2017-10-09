@@ -14,4 +14,10 @@
     <item name="btn_forgot_password_login" type="id">btnForgotPasswordLogin</item>
     <item name="txtview_login_error_msg_id" type="id">txtViewErrorMsg_Login</item>
     <item name="btn_logout_homepage_id" type="id">btnLogoutHomePage</item>
+    <item name="expandview_course_details_id" type="id">expandViewCourseDetailsId</item>
+    <item name="txtview_expand_view_header_course_details" type="id">
+        txtViewExpandViewHeaderCourseDetailsId
+    </item>
+    <item name="txtview_expand_view_sub_item_course_details" type="id">txtViewExpandViewSubItemCourseDetailsId
+    </item>
 </resources>
