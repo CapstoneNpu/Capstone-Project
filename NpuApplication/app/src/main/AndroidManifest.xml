@@ -23,7 +23,8 @@
         <activity android:name=".GradesActivity" />
         <activity android:name=".AttendanceActivity" />
         <activity android:name=".HandoutActivity" />
-        <activity android:name=".SyllabusActivity"></activity>
+        <activity android:name=".SyllabusActivity" />
+        <activity android:name=".SocialMediaActivity"></activity>
     </application>
 
 </manifest>
