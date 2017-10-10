@@ -64,4 +64,8 @@ public class HomePageActivity extends AppCompatActivity {
     public void btnCourseHomePage_onClick(View view) {
         goToAnotherActivity(this, CurrentSemsterCourseListActivity.class);
     }
+
+    public void btnSocialMedia_onClick(View view) {
+        goToAnotherActivity(this, SocialMediaActivity.class);
+    }
 }
