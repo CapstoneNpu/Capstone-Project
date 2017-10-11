@@ -22,7 +22,7 @@
             android:layout_row="0"
             android:text="Social Media"
             app:layout_constraintBottom_toTopOf="@+id/btn_news_homepage_id"
-            app:layout_constraintRight_toLeftOf="@+id/btn_shuttle_homepage_id"
+            app:layout_constraintRight_toLeftOf="@+id/btn_other_info_id"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
 
@@ -51,7 +51,7 @@
             app:layout_constraintRight_toRightOf="parent" />
 
         <Button
-            android:id="@+id/btn_shuttle_homepage_id"
+            android:id="@+id/btn_other_info_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/btn_event_homepage_id"
@@ -60,7 +60,7 @@
             android:layout_alignParentRight="true"
             android:layout_column="0"
             android:layout_row="0"
-            android:text="Shuttle"
+            android:text="Other Info"
             app:layout_constraintBottom_toTopOf="@+id/btn_course_homepage_id"
             app:layout_constraintRight_toRightOf="parent" />
 
