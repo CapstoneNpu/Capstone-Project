@@ -20,9 +20,13 @@ public class ExpandableListCreation {
     private List<String> listHeader;
     private HashMap<String, List<String>> listHashMap;
 
-    public void createExpandableListView(Activity activity, List<String> listHeader, HashMap<String, List<String>> listHashMap) {
+    public void createExpandableListView(
+            Activity activity,
+            List<String> listHeader,
+            HashMap<String, List<String>> listHashMap,
+            int id) {
         this.activity = activity;
-        expandableListView = (ExpandableListView) this.activity.findViewById(R.id.expandview_course_details_id);
+        expandableListView = (ExpandableListView) this.activity.findViewById(id);
         expandableListAdapter = new ExpandableListAdapter(this.activity, listHeader, listHashMap);
         expandableListView.setAdapter(expandableListAdapter);
     }
