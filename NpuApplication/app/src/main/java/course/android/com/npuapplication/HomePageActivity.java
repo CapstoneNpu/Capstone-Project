@@ -22,8 +22,8 @@ public class HomePageActivity extends AppCompatActivity {
         otherInfo.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent mapIntent = new Intent(getApplicationContext(),OtherInfoHome.class);
-                startActivity(mapIntent);
+                Intent otherInfoIntent = new Intent(getApplicationContext(),OtherInfoHome.class);
+                startActivity(otherInfoIntent);
             }
         });
     }
