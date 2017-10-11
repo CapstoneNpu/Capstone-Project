@@ -2,7 +2,9 @@ package course.android.com.npuapplication.Database;
 
 import com.google.firebase.database.DataSnapshot;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Bansari on 10/9/2017.
@@ -71,5 +73,37 @@ public class CourseData {
         courseDetailsStrArray.put("Schedule", String.valueOf(selectedCourseInfo.child("Schedule").getValue()));
 
         return courseDetailsStrArray;
+    }
+
+    public static List<String> getChildKeys(DataSnapshot parent) {
+        List<String> childKeys = new ArrayList<String>();
+        if (parent.exists()) {
+            for(DataSnapshot d : parent.getChildren()) {
+                childKeys.add(d.getKey());
+            }
+        }
+        return childKeys;
+    }
+
+    public HashMap<String, List<String>> fetchCourseDetailsForSyllabusPage() {
+        HashMap<String, List<String>> syllabusDetails = new HashMap<>();
+
+        DataSnapshot weeklyInformation = selectedCourseInfo.child("Weekly Information");
+        List<String> weeks = getChildKeys(weeklyInformation);
+        syllabusDetails.put("Weekly Information", weeks);
+
+        DataSnapshot textBook = selectedCourseInfo.child("Textbook");
+        List<String> textBookInformation = new ArrayList<String>();
+        textBookInformation.add("Author: " + String.valueOf(textBook.child("Author").getValue()));
+        textBookInformation.add("ISBN: " + String.valueOf(textBook.child("ISBN").getValue()));
+        textBookInformation.add("Publisher: " + String.valueOf(textBook.child("Publisher").getValue()));
+        textBookInformation.add("Title: " + String.valueOf(textBook.child("Title").getValue()));
+
+        syllabusDetails.put("Textbook", textBookInformation);
+
+        DataSnapshot refTextBook = selectedCourseInfo.child("Reference Book");
+        List<String> referenceBookInformation = getChildKeys(refTextBook);
+        syllabusDetails.put("Reference Book", referenceBookInformation);
+        return syllabusDetails;
     }
 }

@@ -62,7 +62,12 @@ public class CourseDetailsActivity extends AppCompatActivity {
                 listChildArg = new HashMap<>();
                 fillChildHashMap();
                 expandableListCreationObj = new ExpandableListCreation();
-                expandableListCreationObj.createExpandableListView(CourseDetailsActivity.this, listHeader, listChildArg);
+                expandableListCreationObj.createExpandableListView(
+                        CourseDetailsActivity.this,
+                        listHeader,
+                        listChildArg,
+                        R.id.expandview_course_details_id
+                );
             }
 
             @Override
