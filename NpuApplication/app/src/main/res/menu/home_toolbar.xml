@@ -5,7 +5,7 @@
         android:id="@+id/login"
         android:icon="@drawable/ic_login"
         android:title="Log In"
-        android:onClick="btnLgoin_MenuClick"
+        android:onClick="btnLogin_MenuClick"
         app:showAsAction="always" />
 
 </menu>
