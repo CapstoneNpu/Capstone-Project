@@ -14,38 +14,10 @@ public class UserData {
     private DataSnapshot userCourseInfo;
     private DataSnapshot loginUserInfo;
     private DataSnapshot currentSemCourseInfo;
-
-    public DataSnapshot getLoginUserInfo() {
-        return loginUserInfo;
-    }
-
-    public void setLoginUserInfo(DataSnapshot loginUserInfo) {
-        this.loginUserInfo = loginUserInfo;
-    }
-
-    public DataSnapshot getCurrentSemCourseInfo() {
-        return currentSemCourseInfo;
-    }
-
-    public void setCurrentSemCourseInfo(DataSnapshot currentSemCourseInfo) {
-        this.currentSemCourseInfo = currentSemCourseInfo;
-    }
-
-    public DataSnapshot getAllUserInfo() {
-
-        return allUserInfo;
-    }
+    private DataSnapshot currentCourseGradeDetails;
 
     public void setAllUserInfo(DataSnapshot allUserInfo) {
         this.allUserInfo = allUserInfo;
-    }
-
-    public DataSnapshot getUserCourseInfo() {
-        return userCourseInfo;
-    }
-
-    public void setUserCourseInfo(DataSnapshot userCourseInfo) {
-        this.userCourseInfo = userCourseInfo;
     }
 
     //return all users' information (entire UserList from firebase)
@@ -84,5 +56,11 @@ public class UserData {
         }
         currentSemCourseInfo = fetchUserCourseInfo(userName).child(String.valueOf(currentYear)).child(currentSemester);
         return currentSemCourseInfo;
+    }
+
+    public DataSnapshot fetchCurrentCourseGradeDeatils(String CourseId){
+
+
+        return currentCourseGradeDetails;
     }
 }

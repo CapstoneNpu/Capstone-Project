@@ -20,4 +20,6 @@
     </item>
     <item name="txtview_expand_view_sub_item_course_details" type="id">txtViewExpandViewSubItemCourseDetailsId
     </item>
+    <item name="txtview_total_grade_id" type="id">txtViewTotalGradeId</item>
+    <item name="listview_grade_details_id" type="id">listViewGradeDetailsId</item>
 </resources>
