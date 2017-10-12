@@ -23,9 +23,6 @@ import course.android.com.npuapplication.Database.UserData;
 public class GradesActivity extends AppCompatActivity {
 
     private Intent intentFromCurrentSemesterCourseList;
-
-    private Session session;
-
     private UserData userDataObj;
     private String selectedCourseId;
     private Session session;

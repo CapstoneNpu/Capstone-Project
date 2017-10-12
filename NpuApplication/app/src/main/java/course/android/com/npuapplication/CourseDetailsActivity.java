@@ -66,7 +66,8 @@ public class CourseDetailsActivity extends AppCompatActivity {
                         CourseDetailsActivity.this,
                         listHeader,
                         listChildArg,
-                        R.id.expandview_course_details_id
+                        R.id.expandview_course_details_id,
+                        false
                 );
             }
 

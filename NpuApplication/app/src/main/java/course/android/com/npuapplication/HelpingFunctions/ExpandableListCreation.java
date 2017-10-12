@@ -2,7 +2,6 @@ package course.android.com.npuapplication.HelpingFunctions;
 
 import android.app.Activity;
 import android.widget.ExpandableListView;
-
 import java.util.HashMap;
 import java.util.List;
 
@@ -20,14 +19,16 @@ public class ExpandableListCreation {
     private List<String> listHeader;
     private HashMap<String, List<String>> listHashMap;
 
-    public void createExpandableListView(
+    public ExpandableListView createExpandableListView(
             Activity activity,
             List<String> listHeader,
             HashMap<String, List<String>> listHashMap,
-            int id) {
+            int id,
+            boolean isChildClickable) {
         this.activity = activity;
         expandableListView = (ExpandableListView) this.activity.findViewById(id);
-        expandableListAdapter = new ExpandableListAdapter(this.activity, listHeader, listHashMap);
+        expandableListAdapter = new ExpandableListAdapter(this.activity, listHeader, listHashMap, isChildClickable);
         expandableListView.setAdapter(expandableListAdapter);
+        return expandableListView;
     }
 }
