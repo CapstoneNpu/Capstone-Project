@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="course.android.com.npuapplication.CurrentSemsterCourseListActivity">
 
-    <!--<android.support.design.widget.NavigationView
+    <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="495dp"
         android:layout_gravity="start"
@@ -16,7 +16,7 @@
         app:itemTextColor="@color/colorGrey"
         app:menu="@menu/drawermenu">
 
-    </android.support.design.widget.NavigationView>-->
+    </android.support.design.widget.NavigationView>
 
     <ListView
         android:id="@+id/courseList"

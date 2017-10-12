@@ -28,6 +28,7 @@ public class SyllabusActivity extends AppCompatActivity {
     private CourseData courseDataObj;
     private FirebaseDatabase firebaseDatabase;
     private String courseId;
+    private Session session;
 
     private ExpandableListCreation expandableListCreationObj;
 
@@ -35,7 +36,7 @@ public class SyllabusActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_syllabus);
-
+        session = new Session(this);
         intentFromCurrentSemesterCourseList = getIntent();
         courseId = intentFromCurrentSemesterCourseList.getStringExtra("CourseId").toString();
 
@@ -78,7 +79,11 @@ public class SyllabusActivity extends AppCompatActivity {
     public void btnGoToHome_onClick(MenuItem item) {
         goToAnotherActivity(this, HomePageActivity.class);
     }
-
+    //Home button(Action bar) onClick event handler
+    public void btnLogOut_onClick(MenuItem item) {
+        session.setusename("");
+        goToAnotherActivity(this, Home_2Activity.class);
+    }
     //Navigate to another activity
     public void goToAnotherActivity(Context currentActivity, Class targetActivity) {
         Intent intentObj = new Intent(currentActivity, targetActivity);
