@@ -16,6 +16,7 @@
 
         <Button
             android:id="@+id/btn_social_media_homepage_id"
+            android:onClick="btnSocialMedia_onClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
@@ -40,6 +41,7 @@
 
         <Button
             android:id="@+id/btn_course_homepage_id"
+            android:onClick="btnCourseHomePage_onClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/btn_social_media_homepage_id"
@@ -70,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/btn_map_homePage_id"
             android:layout_alignBottom="@+id/btn_map_homePage_id"
+            android:onClick="btn_eventHomePage_onClick"
             android:layout_centerHorizontal="true"
             android:layout_column="2"
             android:layout_row="1"
@@ -103,7 +106,19 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="15dp"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:onClick="btnLoginHomePage_onClick"/>
+
+        <Button
+            android:id="@+id/btn_logout_homepage_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btn_login_homepage_id"
+            android:layout_alignBottom="@+id/btn_login_homepage_id"
+            android:layout_alignLeft="@+id/btn_login_homepage_id"
+            android:layout_alignStart="@+id/btn_login_homepage_id"
+            android:onClick="btnLogoutHomePage_onClick"
+            android:text="Logout" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

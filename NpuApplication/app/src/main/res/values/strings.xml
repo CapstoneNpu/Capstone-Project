@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">NpuApplication</string>
+    <string name="txt_user_name_hint">Enter User Name</string>
+    <string name="txt_password_hint">Enter Password</string>
+    <string name="font_family">sans-serif</string>
+    <string name="btn_txt_login">LOGIN</string>
+    <string name="btn_forgot_password_login">Forgot Password</string>
+    <string name="btn_cancel">CANCEL</string>
+    <string name="btn_next">NEXT</string>
+    <string name="txt_dialod_reset_password">Send reset password link to</string>
+    <string name="btn_send">SEND</string>
+    <string name="reset_password_dialog_title">Reset Password</string>
+    <string name="reset_password_dialog_message">Do you want to send reset password link to pa***b@mail.npu.com?</string>
+    <string name="txtview_login_error_msg">Username and Password don\'t match</string>
 </resources>

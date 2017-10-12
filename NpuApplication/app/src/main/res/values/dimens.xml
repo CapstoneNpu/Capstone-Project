@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="txt_size">18sp</dimen>
+    <dimen name="txt_field_login_height">40sp</dimen>
+    <dimen name="txt_field_login_width">300sp</dimen>
+</resources>
