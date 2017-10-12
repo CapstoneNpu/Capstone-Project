@@ -10,6 +10,7 @@ import android.widget.Button;
 public class OtherInfoHome extends AppCompatActivity {
     Button elibrary;
     Button mapBtn;
+    Button eateries;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,5 +37,15 @@ public class OtherInfoHome extends AppCompatActivity {
                 }
             }
         });
+        eateries = (Button) findViewById(R.id.eatBtn);
+        eateries.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent eatIntent = new Intent(getApplicationContext(),NearbyEateriesActivity.class);
+                startActivity(eatIntent);
+            }
+        });
+
     }
 }

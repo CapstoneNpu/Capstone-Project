@@ -47,7 +47,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             @Override
             public View getInfoContents(Marker marker) {
-                View v = getLayoutInflater().inflate(R.layout.info_window,null);
+                View v = getLayoutInflater().inflate(R.layout.tryinfowindow,null);
                 TextView title = (TextView) v.findViewById(R.id.tv_title);
                 TextView desc = (TextView) v.findViewById(R.id.tv_desc);
                 title.setText(marker.getTitle());
