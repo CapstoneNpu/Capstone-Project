@@ -1,6 +1,8 @@
 package course.android.com.npuapplication;
 
+
 import android.content.Context;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +23,10 @@ public class HomePageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+
+        //btnMap = (Button) findViewById(R.id.btn_map_homePage_id);
+        //btnMap.setVisibility(View.GONE);
+
         btnCourse = (Button) findViewById(R.id.btn_course_homepage_id);
         btnLogin = (Button) findViewById(R.id.btn_login_homepage_id);
         btnLogout = (Button) findViewById(R.id.btn_logout_homepage_id);
@@ -36,6 +42,16 @@ public class HomePageActivity extends AppCompatActivity {
             btnCourse.setVisibility(View.VISIBLE);
             btnLogout.setVisibility(View.VISIBLE);
         }
+      
+      //other info feature
+      Button otherInfo = (Button)findViewById(R.id.btn_other_info_id);
+        otherInfo.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent otherInfoIntent = new Intent(getApplicationContext(),OtherInfoHome.class);
+                startActivity(otherInfoIntent);
+            }
+        });
     }
 
     //login button onClick() event handler
