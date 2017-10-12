@@ -8,13 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class OtherInfoHome extends AppCompatActivity {
-
+    Button elibrary;
+    Button mapBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other_info_home);
 
-        Button mapBtn = (Button)findViewById(R.id.mapBtn);
+        mapBtn = (Button)findViewById(R.id.mapBtn);
         mapBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -23,7 +24,7 @@ public class OtherInfoHome extends AppCompatActivity {
             }
         });
 
-        Button elibrary = (Button)findViewById(R.id.libBtn);
+        elibrary = (Button)findViewById(R.id.libBtn);
         elibrary.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
