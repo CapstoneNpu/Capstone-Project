@@ -7,11 +7,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
@@ -27,14 +31,20 @@ public class AttendanceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_attendance);
         session = new Session(this);
         intentFromCurrentSemesterCourseList = getIntent();
-        String courseId = intentFromCurrentSemesterCourseList.getStringExtra("CourseId").toString();
+       // String courseId = intentFromCurrentSemesterCourseList.getStringExtra("CourseId").toString();
         attenChrt = (PieChart) findViewById(R.id.attendence_chart);
-        attenChrt.setUsePercentValues(true);
+       // attenChrt.setUsePercentValues(true);
         attenChrt.getDescription().setEnabled(false);
-        attenChrt.setExtraOffsets(5,10,5,5);
+       // attenChrt.setExtraOffsets(5,10,5,5);
         attenChrt.setDragDecelerationFrictionCoef(0.95f);
         attenChrt.setDrawHoleEnabled(true);
-        attenChrt.setHoleColor(R.color.colorGrey);
+       // attenChrt.setHoleColor(R.color.colorWhite);
+        attenChrt.setHoleRadius(27f);
+        attenChrt.setCenterText("Attendance");
+        attenChrt.setCenterTextSize(14f);
+        attenChrt.setDrawEntryLabels(true);
+        attenChrt.setTransparentCircleAlpha(0);
+
         attenChrt.setTransparentCircleRadius(61f);
 
         ArrayList<PieEntry> yValues = new ArrayList<>();
@@ -46,12 +56,25 @@ public class AttendanceActivity extends AppCompatActivity {
         PieDataSet dataset =  new PieDataSet(yValues,"Attemdace");
         dataset.setSliceSpace(3f);
         dataset.setSelectionShift(5f);
-        dataset.setColors(ColorTemplate.JOYFUL_COLORS);
-
+        dataset.setColors(ColorTemplate.MATERIAL_COLORS);
+dataset.setValueTextSize(12f);
+        dataset.setValueTextColor(Color.BLACK);
         PieData data = new PieData(dataset);
-        data.setValueTextSize(10f);
-       // data.setValueTextColors("#2E2E2E");
+        data.setValueTextSize(18f);
+       // data.setValueTextColors(Color.BLACK);
         attenChrt.setData(data);
+        attenChrt.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+                String temp = e.toString();
+                Toast.makeText(AttendanceActivity.this,e.toString(),Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected() {
+
+            }
+        });
     }
 
     @Override

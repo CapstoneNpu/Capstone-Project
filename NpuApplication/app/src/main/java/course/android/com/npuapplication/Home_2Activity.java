@@ -2,13 +2,11 @@ package course.android.com.npuapplication;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.support.v7.widget.Toolbar;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -51,12 +49,16 @@ public class Home_2Activity extends AppCompatActivity {
         startActivity(intentObj);
     }
 
-    public void btnLgoin_MenuClick(MenuItem item) {
+    public void btnLogin_MenuClick(MenuItem item) {
         goToAnotherActivity(Home_2Activity.this, LogInActivity.class);
 
     }
 
-
+    public void btn_otherinfo(View view){
+       // Intent otherInfoIntent = new Intent(getApplicationContext(),OtherInfoHome.class);
+        //startActivity(otherInfoIntent);
+        goToAnotherActivity(Home_2Activity.this, OtherInfoHome.class);
+    }
 
     //event button onClick() event handler
     public void btn_eventHomePage_onClick(View view) {
@@ -72,4 +74,8 @@ public class Home_2Activity extends AppCompatActivity {
         goToAnotherActivity(this, SocialMediaActivity.class);
     }
 
+    @Override
+    public void onBackPressed() {
+        goToAnotherActivity(this, Home_2Activity.class);
+    }
 }
