@@ -22,11 +22,13 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     private Context context;
     private List<String> listHeader;
     private HashMap<String, List<String>> listHashMap;
+    private boolean isChildClickable;
 
-    public ExpandableListAdapter(Context context, List<String> listHeader, HashMap<String, List<String>> listHashMap) {
+    public ExpandableListAdapter(Context context, List<String> listHeader, HashMap<String, List<String>> listHashMap, boolean isChildClickable) {
         this.context = context;
         this.listHeader = listHeader;
         this.listHashMap = listHashMap;
+        this.isChildClickable = isChildClickable;
     }
 
     @Override
@@ -95,6 +97,6 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public boolean isChildSelectable(int i, int i1) {
-        return false;
+        return this.isChildClickable;
     }
 }

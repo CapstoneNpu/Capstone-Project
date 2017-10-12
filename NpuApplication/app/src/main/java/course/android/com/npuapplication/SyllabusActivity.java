@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ExpandableListView;
+import android.view.View;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,7 +31,7 @@ public class SyllabusActivity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private String courseId;
     private Session session;
-
+    private ExpandableListView expandableListView;
     private ExpandableListCreation expandableListCreationObj;
 
     @Override
@@ -54,12 +56,22 @@ public class SyllabusActivity extends AppCompatActivity {
                 mapDataFromDatabase = courseDataObj.fetchCourseDetailsForSyllabusPage();
                 List<String> listHeader = new ArrayList<String>(mapDataFromDatabase.keySet());
                 expandableListCreationObj = new ExpandableListCreation();
-                expandableListCreationObj.createExpandableListView(
+                expandableListView = expandableListCreationObj.createExpandableListView(
                         SyllabusActivity.this,
                         listHeader,
                         mapDataFromDatabase,
-                        R.id.expandview_course_syllabus_id
+                        R.id.expandview_course_syllabus_id,
+                        true
                 );
+                expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+
+                    @Override
+                    public boolean onChildClick(ExpandableListView elv, View view, int g, int c, long id) {
+                        System.out.println(g);
+                        System.out.println(c);
+                        return true;
+                    }
+                });
             }
 
             @Override
