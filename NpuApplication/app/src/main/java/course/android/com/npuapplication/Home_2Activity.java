@@ -54,7 +54,11 @@ public class Home_2Activity extends AppCompatActivity {
 
     }
 
-
+    public void btn_otherinfo(View view){
+       // Intent otherInfoIntent = new Intent(getApplicationContext(),OtherInfoHome.class);
+        //startActivity(otherInfoIntent);
+        goToAnotherActivity(Home_2Activity.this, OtherInfoHome.class);
+    }
 
     //event button onClick() event handler
     public void btn_eventHomePage_onClick(View view) {

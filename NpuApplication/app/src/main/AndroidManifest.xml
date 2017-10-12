@@ -28,19 +28,22 @@
         <activity android:name=".CurrentSemsterCourseListActivity" />
         <activity android:name=".CourseDetailsActivity" />
         <activity android:name=".GradesActivity" />
-        <activity android:name=".AttendanceActivity" />
+        <activity android:name=".AttendanceActivity">
+
+            </activity>
         <activity android:name=".HandoutActivity" />
         <activity android:name=".SyllabusActivity" />
         <activity android:name=".SocialMediaActivity" />
         <activity android:name=".StartUpActivity">
+        </activity>
+
+        <activity android:name=".Home_2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Home_2Activity"></activity>
 
         <activity android:name=".MapsActivity" />
         <activity android:name=".NearbyEateriesActivity" />
