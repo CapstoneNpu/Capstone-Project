@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="course.android.com.npuapplication.Home_2Activity">
+
+    <ImageButton
+        android:id="@+id/btn_maps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/maps"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/btn_shuttle"
+        android:layout_alignStart="@+id/btn_shuttle" />
+
+    <ImageButton
+        android:id="@+id/btn_news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/news"
+        android:layout_marginRight="39dp"
+        android:layout_marginEnd="39dp"
+        android:layout_alignTop="@+id/btn_maps"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="11dp" />
+
+    <ImageButton
+        android:id="@+id/btn_shuttle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/bus"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:id="@+id/btn_soclmd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnSocialMedia_onClick"
+        android:background="@drawable/social"
+        android:layout_alignTop="@+id/btn_shuttle"
+        android:layout_alignLeft="@+id/btn_news"
+        android:layout_alignStart="@+id/btn_news" />
+
+    <ImageButton
+        android:id="@+id/btn_rest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/rest"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/btn_shuttle"
+        android:layout_alignStart="@+id/btn_shuttle" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maps"
+        android:textSize="20dp"
+        android:layout_below="@+id/btn_maps"
+        android:layout_alignRight="@+id/btn_shuttle"
+        android:layout_alignEnd="@+id/btn_shuttle"
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_news"
+        android:layout_alignRight="@+id/btn_news"
+        android:layout_below="@+id/btn_maps"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:textSize="20dp"
+        android:text="News" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Shuttle"
+        android:layout_below="@+id/btn_shuttle"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Social Media"
+        android:textSize="20dp"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignRight="@+id/btn_soclmd"
+        android:layout_alignEnd="@+id/btn_soclmd" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dining"
+        android:textSize="20dp"
+        android:layout_below="@+id/btn_rest"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <ImageButton
+        android:id="@+id/btn_myacct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btn_soclmd"
+        android:layout_alignStart="@+id/btn_soclmd"
+        android:layout_alignTop="@+id/btn_rest"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/accnt"
+        android:layout_alignBottom="@+id/btn_rest"
+        android:layout_alignRight="@+id/btn_news"
+        android:layout_alignEnd="@+id/btn_news"
+        android:onClick="btnCourseHomePage_onClick"/>
+
+    <TextView
+        android:id="@+id/txt_myacct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btn_myacct"
+        android:layout_alignStart="@+id/btn_myacct"
+        android:layout_below="@+id/btn_myacct"
+        android:text="My Account"
+        android:textSize="20dp"/>
+</RelativeLayout>

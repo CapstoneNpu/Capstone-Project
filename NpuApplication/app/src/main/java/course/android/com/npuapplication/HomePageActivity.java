@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -54,6 +56,7 @@ public class HomePageActivity extends AppCompatActivity {
         });
     }
 
+
     //login button onClick() event handler
     public void btnLoginHomePage_onClick(View view) {
         goToAnotherActivity(HomePageActivity.this, LogInActivity.class);
@@ -84,4 +87,7 @@ public class HomePageActivity extends AppCompatActivity {
     public void btnSocialMedia_onClick(View view) {
         goToAnotherActivity(this, SocialMediaActivity.class);
     }
+
+
+
 }

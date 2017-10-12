@@ -20,11 +20,12 @@ public class AttendanceActivity extends AppCompatActivity {
 
     private Intent intentFromCurrentSemesterCourseList;
  PieChart attenChrt;
+    private Session session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance);
-
+        session = new Session(this);
         intentFromCurrentSemesterCourseList = getIntent();
         String courseId = intentFromCurrentSemesterCourseList.getStringExtra("CourseId").toString();
         attenChrt = (PieChart) findViewById(R.id.attendence_chart);
@@ -61,9 +62,13 @@ public class AttendanceActivity extends AppCompatActivity {
 
     //Home button(Action bar) onClick event handler
     public void btnGoToHome_onClick(MenuItem item) {
-        goToAnotherActivity(this, HomePageActivity.class);
+        goToAnotherActivity(this, Home_2Activity.class);
     }
-
+    //Home button(Action bar) onClick event handler
+    public void btnLogOut_onClick(MenuItem item) {
+        session.setusename("");
+        goToAnotherActivity(this, Home_2Activity.class);
+    }
     //Navigate to another activity
     public void goToAnotherActivity(Context currentActivity, Class targetActivity) {
         Intent intentObj = new Intent(currentActivity, targetActivity);

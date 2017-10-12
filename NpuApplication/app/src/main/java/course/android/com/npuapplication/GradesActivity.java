@@ -23,6 +23,9 @@ import course.android.com.npuapplication.Database.UserData;
 public class GradesActivity extends AppCompatActivity {
 
     private Intent intentFromCurrentSemesterCourseList;
+
+    private Session session;
+
     private UserData userDataObj;
     private String selectedCourseId;
     private Session session;
@@ -41,13 +44,12 @@ public class GradesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grades);
-
-
+      
         session = new Session(this);
         if (session.getusename().equals(null) || session.getusename().equals("")) {
             goToAnotherActivity(this, HomePageActivity.class);
         }
-
+      
         intentFromCurrentSemesterCourseList = getIntent();
         selectedCourseId = intentFromCurrentSemesterCourseList.getStringExtra("CourseId").toString();
 
@@ -105,10 +107,15 @@ public class GradesActivity extends AppCompatActivity {
     public void btnGoToHome_onClick(MenuItem item) {
         goToAnotherActivity(this, HomePageActivity.class);
     }
-
+    //Home button(Action bar) onClick event handler
+    public void btnLogOut_onClick(MenuItem item) {
+        session.setusename("");
+        goToAnotherActivity(this, Home_2Activity.class);
+    }
     //Navigate to another activity
     public void goToAnotherActivity(Context currentActivity, Class targetActivity) {
         Intent intentObj = new Intent(currentActivity, targetActivity);
         startActivity(intentObj);
     }
+
 }

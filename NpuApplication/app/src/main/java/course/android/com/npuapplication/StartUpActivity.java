@@ -16,7 +16,7 @@ public class StartUpActivity extends AppCompatActivity {
                                       @Override
                                       public void run()
                                       {
-                                          Intent homeintent = new Intent(StartUpActivity.this,HomePageActivity.class);
+                                          Intent homeintent = new Intent(StartUpActivity.this,Home_2Activity.class);
                                           startActivity(homeintent);
                                       }
                                   }

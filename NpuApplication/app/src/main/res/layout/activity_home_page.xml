@@ -8,11 +8,11 @@
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
-    <RelativeLayout
+   <!-- <RelativeLayout
         android:layout_width="369dp"
         android:layout_height="494dp"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="8dp"> -->
 
         <Button
             android:id="@+id/btn_social_media_homepage_id"
@@ -119,6 +119,6 @@
             android:layout_alignStart="@+id/btn_login_homepage_id"
             android:onClick="btnLogoutHomePage_onClick"
             android:text="Logout" />
-    </RelativeLayout>
+    <!--</RelativeLayout> -->
 
 </android.support.constraint.ConstraintLayout>

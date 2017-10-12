@@ -32,7 +32,7 @@ public class CourseDetailsActivity extends AppCompatActivity {
     private ExpandableListCreation expandableListCreationObj;
     private CourseData courseDataObj;
     private String courseId;
-
+    private Session session;
     //firebase reference objects
     private FirebaseDatabase firebaseDatabase;
 
@@ -40,7 +40,7 @@ public class CourseDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_details);
-
+        session = new Session(this);
         intentFromCurrentSemesterCourseList = getIntent();
         courseId = intentFromCurrentSemesterCourseList.getStringExtra("CourseId").toString();
 
@@ -101,7 +101,11 @@ public class CourseDetailsActivity extends AppCompatActivity {
     public void btnGoToHome_onClick(MenuItem item) {
         goToAnotherActivity(this, HomePageActivity.class);
     }
-
+    //Home button(Action bar) onClick event handler
+    public void btnLogOut_onClick(MenuItem item) {
+        session.setusename("");
+        goToAnotherActivity(this, Home_2Activity.class);
+    }
     //Navigate to another activity
     public void goToAnotherActivity(Context currentActivity, Class targetActivity) {
         Intent intentObj = new Intent(currentActivity, targetActivity);

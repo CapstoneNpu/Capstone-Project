@@ -78,7 +78,7 @@ public class LogInActivity extends AppCompatActivity {
     //To display Toolbar (Home Button)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        getMenuInflater().inflate(R.menu.login_toolbar, menu);
         return true;
     }
 
@@ -123,7 +123,7 @@ public class LogInActivity extends AppCompatActivity {
         if (userLoginDataSnapObj != null && userLoginDataSnapObj.child(encryptedPassword).hasChildren()) {
             txtViewErrorMsgLogin.setVisibility(View.INVISIBLE);
             session.setusename(encryptedPassword);
-            goToAnotherActivity(LogInActivity.this, HomePageActivity.class);
+            goToAnotherActivity(LogInActivity.this, CurrentSemsterCourseListActivity.class);
         }
         else{
             txtViewErrorMsgLogin.setVisibility(View.VISIBLE);

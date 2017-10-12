@@ -16,12 +16,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+      
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDufrIhHMjvNX3A3V7jz6XDH_3P_FNk-jw" />
 
         <activity android:name=".HomePageActivity">
-
         </activity>
         <activity android:name=".LogInActivity" />
         <activity android:name=".EventActivity" />
@@ -39,6 +39,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".Home_2Activity"></activity>
+
         <activity android:name=".MapsActivity" />
         <activity android:name=".NearbyEateriesActivity" />
         <activity android:name=".OtherInfoHome" />
