@@ -15,4 +15,6 @@
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
     <string name="channel_name" translatable="false">NPU_Channel_Name</string>
     <string name="channel_description" translatable="false">NPU_App_Notificaiton</string>
+    <string name="txtview_quiz_grade_title_text">Quiz Score</string>
+    <string name="txtview_homework_grade_title_text">Homework Score</string>
 </resources>
