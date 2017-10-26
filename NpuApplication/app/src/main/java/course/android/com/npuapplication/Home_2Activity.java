@@ -2,6 +2,7 @@ package course.android.com.npuapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -55,9 +56,20 @@ public class Home_2Activity extends AppCompatActivity {
     }
 
     public void btn_otherinfo(View view){
-       // Intent otherInfoIntent = new Intent(getApplicationContext(),OtherInfoHome.class);
-        //startActivity(otherInfoIntent);
-        goToAnotherActivity(Home_2Activity.this, OtherInfoHome.class);
+        goToAnotherActivity(Home_2Activity.this, MapsActivity.class);
+    }
+
+    public void btn_eateries(View view){
+        goToAnotherActivity(Home_2Activity.this, NearbyEateriesActivity.class);
+    }
+
+    public void btn_lib(View view){
+                String libAddress = "https://elib.npu.edu/login";
+                Uri webaddress = Uri.parse(libAddress);
+                Intent libIntent = new Intent(Intent.ACTION_VIEW,webaddress);
+                if (libIntent.resolveActivity(getPackageManager())!=null) {
+                    startActivity(libIntent);
+                }
     }
 
     //event button onClick() event handler
