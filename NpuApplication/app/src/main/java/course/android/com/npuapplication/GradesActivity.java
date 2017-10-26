@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -41,12 +43,12 @@ public class GradesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grades);
-      
+
         session = new Session(this);
         if (session.getusename().equals(null) || session.getusename().equals("")) {
             goToAnotherActivity(this, HomePageActivity.class);
         }
-      
+
         intentFromCurrentSemesterCourseList = getIntent();
         selectedCourseId = intentFromCurrentSemesterCourseList.getStringExtra("CourseId").toString();
 
@@ -73,11 +75,32 @@ public class GradesActivity extends AppCompatActivity {
                 gradeListItemsAdapter = new ArrayAdapter<String>(GradesActivity.this, android.R.layout.simple_list_item_1, gradeListItems);
                 gradeListView = (ListView) findViewById(R.id.listview_grade_details_id);
                 gradeListView.setAdapter(gradeListItemsAdapter);
+                setupListViewListener();
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+    }
+
+    private void setupListViewListener() {
+        gradeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (gradeListView.getItemAtPosition(position).toString().substring(0, 8).equals("Homework")) {
+                    Intent homeworkIntent = new Intent(GradesActivity.this, HomeworkGradeActivity.class);
+                    homeworkIntent.putExtra("selectedCourseId", selectedCourseId);
+                    startActivity(homeworkIntent);
+                }
+                if (gradeListView.getItemAtPosition(position).toString().substring(0, 4).equals("Quiz")) {
+                    Intent quizIntent = new Intent(GradesActivity.this, QuizGradeActivity.class);
+                    quizIntent.putExtra("selectedCourseId", selectedCourseId);
+                    startActivity(quizIntent);
+                }
             }
         });
     }
@@ -104,11 +127,13 @@ public class GradesActivity extends AppCompatActivity {
     public void btnGoToHome_onClick(MenuItem item) {
         goToAnotherActivity(this, HomePageActivity.class);
     }
+
     //Home button(Action bar) onClick event handler
     public void btnLogOut_onClick(MenuItem item) {
         session.setusename("");
         goToAnotherActivity(this, Home_2Activity.class);
     }
+
     //Navigate to another activity
     public void goToAnotherActivity(Context currentActivity, Class targetActivity) {
         Intent intentObj = new Intent(currentActivity, targetActivity);
