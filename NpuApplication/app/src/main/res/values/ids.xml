@@ -22,4 +22,6 @@
     </item>
     <item name="txtview_total_grade_id" type="id">txtViewTotalGradeId</item>
     <item name="listview_grade_details_id" type="id">listViewGradeDetailsId</item>
+    <item name="listview_homework_grade_id" type="id">listViewHomeworkGradeId</item>
+    <item name="listview_quiz_grade_id" type="id">listViewQuizGradeId</item>
 </resources>
