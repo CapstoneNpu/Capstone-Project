@@ -42,22 +42,26 @@
         <activity android:name=".NearbyEateriesActivity" />
         <activity android:name=".BuildingInfoActivity" />
         <activity android:name=".HomeworkGradeActivity" />
-        <activity android:name=".QuizGradeActivity"></activity>
+        <activity android:name=".QuizGradeActivity" />
+
         <service
             android:name=".MyFirebaseMessagingService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".FirebaseIDService"
+        <service
+            android:name=".FirebaseIDService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".TextbookActivity"></activity>
     </application>
 
 </manifest>
