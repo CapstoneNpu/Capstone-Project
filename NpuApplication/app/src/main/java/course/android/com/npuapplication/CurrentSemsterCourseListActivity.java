@@ -154,6 +154,13 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity {
         courseSyallbusIntent.putExtra("CourseId", selectedCourseId);
         startActivity(courseSyallbusIntent);
     }
+    public void personainfo_onClick(MenuItem item) {
+        // Intent courseSyallbusIntent = new Intent(this, PersonalinfoActivity.class);
+        // courseSyallbusIntent.putExtra("CourseId", selectedCourseId);
+        //  startActivity(courseSyallbusIntent);
+        goToAnotherActivity(this, PersoalinfoActivity.class);
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

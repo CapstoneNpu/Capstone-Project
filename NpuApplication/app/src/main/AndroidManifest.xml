@@ -60,8 +60,8 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
         <activity android:name=".TextbookActivity"></activity>
+        <activity android:name=".PersoalinfoActivity"></activity>
     </application>
 
 </manifest>
