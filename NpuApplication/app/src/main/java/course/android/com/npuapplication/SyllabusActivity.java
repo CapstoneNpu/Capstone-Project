@@ -25,6 +25,7 @@ import course.android.com.npuapplication.HelpingFunctions.ExpandableListCreation
 public class SyllabusActivity extends AppCompatActivity {
 
     HashMap<String, List<String>> mapDataFromDatabase;
+    List<String> listHeader;
 
     private Intent intentFromCurrentSemesterCourseList;
     private CourseData courseDataObj;
@@ -54,7 +55,7 @@ public class SyllabusActivity extends AppCompatActivity {
                 courseDataObj.setAllCourseInfo(courseDataObj.fetchAllCourseData(dataSnapshot));
                 courseDataObj.setSelectedCourseInfo(courseDataObj.fetchSelectedCourseInfo(courseId));
                 mapDataFromDatabase = courseDataObj.fetchCourseDetailsForSyllabusPage();
-                List<String> listHeader = new ArrayList<String>(mapDataFromDatabase.keySet());
+                listHeader = new ArrayList<String>(mapDataFromDatabase.keySet());
                 expandableListCreationObj = new ExpandableListCreation();
                 expandableListView = expandableListCreationObj.createExpandableListView(
                         SyllabusActivity.this,
@@ -67,9 +68,15 @@ public class SyllabusActivity extends AppCompatActivity {
 
                     @Override
                     public boolean onChildClick(ExpandableListView elv, View view, int g, int c, long id) {
-                        System.out.println(g);
-                        System.out.println(c);
-                        return true;
+                        if (g == 1) {
+                            Intent textBookIntent = new Intent(view.getContext(), TextbookActivity.class);
+                            textBookIntent.putExtra("CourseId", courseId);
+                            textBookIntent.putExtra("textBook", mapDataFromDatabase.get(listHeader.get(g)).get(c));
+                            startActivity(textBookIntent);
+                            return true;
+                        } else {
+                            return false;
+                        }
                     }
                 });
             }

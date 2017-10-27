@@ -106,4 +106,17 @@ public class CourseData {
         syllabusDetails.put("Reference Book", referenceBookInformation);
         return syllabusDetails;
     }
+
+    public HashMap<String, String> fetchTextBookData(String bookName) {
+        HashMap<String, String> textBookDetails = new HashMap<>();
+
+        DataSnapshot refTextBooks = selectedCourseInfo.child("Reference Book");
+        DataSnapshot refTextBook = refTextBooks.child(bookName);
+        textBookDetails.put("Author", String.valueOf(refTextBook.child("Author").getValue()));
+        textBookDetails.put("ISBN", String.valueOf(refTextBook.child("ISBN").getValue()));
+        textBookDetails.put("Publisher", String.valueOf(refTextBook.child("Publisher").getValue()));
+        textBookDetails.put("Title", String.valueOf(refTextBook.child("Title").getValue()));
+
+        return textBookDetails;
+    }
 }
