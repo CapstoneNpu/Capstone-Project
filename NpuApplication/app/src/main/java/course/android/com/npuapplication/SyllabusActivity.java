@@ -68,15 +68,36 @@ public class SyllabusActivity extends AppCompatActivity {
 
                     @Override
                     public boolean onChildClick(ExpandableListView elv, View view, int g, int c, long id) {
-                        if (g == 1) {
+                        if (g == 0) {
+                            Intent weekIntent = new Intent(view.getContext(), WeekActivity.class);
+                            weekIntent.putExtra("CourseId", courseId);
+                            weekIntent.putExtra("WeekNum", mapDataFromDatabase.get(listHeader.get(g)).get(c));
+                            startActivity(weekIntent);
+                            return true;
+                        }
+                        else if (g == 1) {
                             Intent textBookIntent = new Intent(view.getContext(), TextbookActivity.class);
                             textBookIntent.putExtra("CourseId", courseId);
                             textBookIntent.putExtra("textBook", mapDataFromDatabase.get(listHeader.get(g)).get(c));
                             startActivity(textBookIntent);
                             return true;
-                        } else {
+                        }  else {
                             return false;
                         }
+                    }
+                });
+                expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+
+                    @Override
+                    public boolean onGroupClick(ExpandableListView elv, View view, int g, long id) {
+                        if (g == 2) {
+                            Intent textBookIntent = new Intent(view.getContext(), TextbookActivity.class);
+                            textBookIntent.putExtra("CourseId", courseId);
+                            textBookIntent.putExtra("textBook", "Textbook");
+                            startActivity(textBookIntent);
+                            return true;
+                        }
+                        return false;
                     }
                 });
             }
