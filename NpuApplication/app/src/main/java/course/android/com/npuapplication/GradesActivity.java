@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -174,6 +175,7 @@ public class GradesActivity extends AppCompatActivity {
 
                 viewHolder = new ViewHolder();
                 viewHolder.btnGradeDetail = (Button) convertView.findViewById(R.id.btn_grade_details_list_item);
+                viewHolder.imgViewGradeDetailNavigate = (ImageView) convertView.findViewById(R.id.imgview_grade_details_navigate_to_next_page_id);
 
                 convertView.setTag(viewHolder);
             } else {
@@ -182,16 +184,19 @@ public class GradesActivity extends AppCompatActivity {
 
             viewHolder.btnGradeDetail.setText(gradeListItems.get(position));
 
-            /*GradientDrawable gd = new GradientDrawable(
-                    GradientDrawable.Orientation.TOP_BOTTOM,
-                    new int[]{0xFFDDDDDD, 0xFFd2d7aa});
-            gd.setCornerRadius(0f);
-            convertView.setBackground(gd);*/
+            if (position == 0 || position == 1)
+                convertView.findViewById(R.id.imgview_grade_details_navigate_to_next_page_id).setVisibility(View.VISIBLE);
 
+            /*if (viewHolder.btnGradeDetail.getText().toString().substring(0, 8).equals("Homework")) {
+                viewHolder.imgViewGradeDetailNavigate.setVisibility(View.VISIBLE);
+            }
+            if (viewHolder.btnGradeDetail.getText().toString().substring(0, 4).equals("Quiz")) {
+                viewHolder.imgViewGradeDetailNavigate.setVisibility(View.VISIBLE);
+            }*/
             viewHolder.btnGradeDetail.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (gradeListItems.get(position).substring(0, 8).equals("Homework")){
+                    if (gradeListItems.get(position).substring(0, 8).equals("Homework")) {
                         Intent homeworkIntent = new Intent(GradesActivity.this, HomeworkGradeActivity.class);
                         homeworkIntent.putExtra("selectedCourseId", selectedCourseId);
                         startActivity(homeworkIntent);
@@ -208,6 +213,7 @@ public class GradesActivity extends AppCompatActivity {
 
         class ViewHolder {
             Button btnGradeDetail;
+            ImageView imgViewGradeDetailNavigate;
         }
     }
 }
