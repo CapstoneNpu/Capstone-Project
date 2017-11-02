@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/list_selector">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -11,8 +12,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="18dp"
         app:srcCompat="@drawable/book" />
 
@@ -21,45 +22,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageView3"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
         android:layout_toEndOf="@+id/imageView3"
         android:layout_toRightOf="@+id/imageView3"
-        android:textSize="25sp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/txt_credits"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/txt_coursecode"
-        android:layout_marginLeft="28dp"
-        android:layout_marginStart="28dp"
-        android:layout_toEndOf="@+id/txt_coursecode"
-        android:layout_toRightOf="@+id/txt_coursecode"
-        android:textSize="16sp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/txt_size_title"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_courename"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="18sp"
         android:layout_alignBottom="@+id/imageView3"
         android:layout_alignLeft="@+id/txt_coursecode"
-        android:layout_alignStart="@+id/txt_coursecode" />
+        android:layout_alignStart="@+id/txt_coursecode"
+        android:text="TextView"
+        android:textColor="@color/common_google_signin_btn_text_light_default"
+        android:textSize="@dimen/txt_size" />
 
-    <ImageButton
+    <com.nightonke.boommenu.BoomMenuButton
+        android:id="@+id/bmb_courseList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        app:bmb_buttonEnum="ham"
+        app:bmb_piecePlaceEnum="piecePlace_ham_6"
+        app:bmb_buttonPlaceEnum="buttonPlace_ham_6"
+        app:bmb_inList="true"/>
+
+
+    <!--<ImageButton
         android:id="@+id/imageButton"
         android:layout_width="10dp"
         android:layout_height="22dp"
         app:srcCompat="@drawable/popup"
-        android:layout_alignTop="@+id/txt_credits"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp" />
+        android:layout_marginEnd="16dp" />-->
 
 
 </RelativeLayout>
