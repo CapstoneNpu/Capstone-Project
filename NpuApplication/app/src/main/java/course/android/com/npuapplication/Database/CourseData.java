@@ -94,10 +94,6 @@ public class CourseData {
 
         DataSnapshot textBook = selectedCourseInfo.child("Textbook");
         List<String> textBookInformation = new ArrayList<String>();
-        textBookInformation.add("Author: " + String.valueOf(textBook.child("Author").getValue()));
-        textBookInformation.add("ISBN: " + String.valueOf(textBook.child("ISBN").getValue()));
-        textBookInformation.add("Publisher: " + String.valueOf(textBook.child("Publisher").getValue()));
-        textBookInformation.add("Title: " + String.valueOf(textBook.child("Title").getValue()));
 
         syllabusDetails.put("Textbook", textBookInformation);
 
@@ -109,14 +105,32 @@ public class CourseData {
 
     public HashMap<String, String> fetchTextBookData(String bookName) {
         HashMap<String, String> textBookDetails = new HashMap<>();
-
-        DataSnapshot refTextBooks = selectedCourseInfo.child("Reference Book");
-        DataSnapshot refTextBook = refTextBooks.child(bookName);
+        DataSnapshot refTextBook;
+        if (bookName.equals("Textbook")) {
+            refTextBook = selectedCourseInfo.child("Textbook");
+        } else {
+            DataSnapshot refTextBooks = selectedCourseInfo.child("Reference Book");
+            refTextBook = refTextBooks.child(bookName);
+        }
         textBookDetails.put("Author", String.valueOf(refTextBook.child("Author").getValue()));
         textBookDetails.put("ISBN", String.valueOf(refTextBook.child("ISBN").getValue()));
         textBookDetails.put("Publisher", String.valueOf(refTextBook.child("Publisher").getValue()));
         textBookDetails.put("Title", String.valueOf(refTextBook.child("Title").getValue()));
+        textBookDetails.put("Url", String.valueOf(refTextBook.child("Url").getValue()));
 
         return textBookDetails;
+    }
+
+    public HashMap<String, String> fetchWeeklyData(String weekName) {
+        HashMap<String, String> weekDetails = new HashMap<>();
+
+        DataSnapshot weekInfo = selectedCourseInfo.child("Weekly Information");
+        DataSnapshot weekNum = weekInfo.child(weekName);
+        weekDetails.put("Assignments", String.valueOf(weekNum.child("Assignments").getValue()));
+        weekDetails.put("Instructive Coverage & Activities", String.valueOf(weekNum.child("Instructive Coverage & Activities").getValue()));
+        weekDetails.put("Objectives", String.valueOf(weekNum.child("Objectives").getValue()));
+        weekDetails.put("Others", String.valueOf(weekNum.child("Others").getValue()));
+
+        return weekDetails;
     }
 }

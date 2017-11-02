@@ -9,6 +9,6 @@
         android:id="@+id/txtview_expand_view_header_course_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:paddingLeft="25dp"
         android:textSize="@dimen/txt_size" />
 </LinearLayout>
