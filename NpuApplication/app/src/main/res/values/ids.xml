@@ -26,4 +26,7 @@
     <item name="listview_quiz_grade_id" type="id">listViewQuizGradeId</item>
     <item name="txtview_quiz_grade_title_id" type="id">txtViewQuizGradeTitleId</item>
     <item name="txtview_homework_grade_title_id" type="id">txtViewHomeworkGradeTitleId</item>
+    <item name="imgview_grade_details_navigate_to_next_page_id" type="id">
+        imgViewGradeDetailedNavigateToNextPageId
+    </item>
 </resources>

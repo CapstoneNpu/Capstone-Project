@@ -13,4 +13,10 @@
         android:gravity="center_vertical"
         android:paddingLeft="@dimen/left_padding_course_details_list_text"
         android:textSize="@dimen/txt_size" />
+
+    <ImageView
+        android:id="@+id/imgview_grade_details_navigate_to_next_page_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
 </LinearLayout>
