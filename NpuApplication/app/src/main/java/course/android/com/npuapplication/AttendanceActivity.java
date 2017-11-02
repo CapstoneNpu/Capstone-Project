@@ -1,12 +1,20 @@
 package course.android.com.npuapplication;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -24,12 +32,29 @@ public class AttendanceActivity extends AppCompatActivity {
 
     private Intent intentFromCurrentSemesterCourseList;
  PieChart attenChrt;
+    ListView weeklistvew;
+    final Context context = this;
     private Session session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance);
         session = new Session(this);
+
+        weeklistvew = new ListView(this);
+        String [] weeksList = {"Week1","Week2","Week3","Week4"};
+        ArrayAdapter<String> adapter =new ArrayAdapter<String>(this,R.layout.attendace_week_summry,R.id.txtweek,weeksList);
+weeklistvew.setAdapter(adapter);
+  //     weeklistvew.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//           @Override
+//           public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//               ViewGroup viewGroup = (ViewGroup) view;
+//               TextView txtwk = (TextView)viewGroup.findViewById(R.id.txtweek);
+//              // if(R.id.txtweek.getParent()!=null)
+//                   ((ViewGroup)txtwk.getParent()).removeView(txtwk);
+//           }
+//       });
+
         intentFromCurrentSemesterCourseList = getIntent();
        // String courseId = intentFromCurrentSemesterCourseList.getStringExtra("CourseId").toString();
         attenChrt = (PieChart) findViewById(R.id.attendence_chart);
@@ -67,7 +92,23 @@ dataset.setValueTextSize(12f);
             @Override
             public void onValueSelected(Entry e, Highlight h) {
                 String temp = e.toString();
-                Toast.makeText(AttendanceActivity.this,e.toString(),Toast.LENGTH_LONG).show();
+               // Toast.makeText(AttendanceActivity.this,e.toString(),Toast.LENGTH_LONG).show();
+                //ViewGroup viewGroup = (ViewGroup) view;
+                //((ViewGroup)txtwk.getParent()).removeView(txtwk);
+                AlertDialog.Builder builder = new AlertDialog.Builder(AttendanceActivity.this);
+               builder.setCancelable(true);
+                //builder.setPositiveButton("OK",null);
+                builder.setView(weeklistvew);
+                AlertDialog dialog = builder.create();
+
+//                final Dialog dialog = new Dialog(context);
+//                dialog.setContentView(R.layout.activity_dialog_attendance);
+//                dialog.setTitle("Title...");
+
+
+              dialog.show();
+                //dialog.hide();
+
             }
 
             @Override

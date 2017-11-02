@@ -65,7 +65,10 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_semster_course_list);
-
+//        getSupportActionBar().setDisplayShowTitleEnabled(false);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setIcon(R.mipmap.ic_instagram);
+//        getSupportActionBar().setDisplayUseLogoEnabled(true);
         session = new Session(this);
         userDataObj = new UserData();
         courseDataObj = new CourseData();
