@@ -17,4 +17,14 @@
     <string name="channel_description" translatable="false">NPU_App_Notificaiton</string>
     <string name="txtview_quiz_grade_title_text">Quiz Score</string>
     <string name="txtview_homework_grade_title_text">Homework Score</string>
+
+    <string name="course_details">Details</string>
+    <string name="course_grade">Grade</string>
+    <string name="course_attendance">Attendance</string>
+    <string name="course_handout">Handout</string>
+    <string name="course_syallbus">Syllabus</string>
+    <string name="personal_profile">Personal Profile</string>
+    <string name="list_example">List Example</string>
+    <string name="text_ham_button_text_normal">Ham Button Text(Normal)</string>
+    <string name="text_ham_button_sub_text_normal">Ham Button Sub Text(Normal)</string>
 </resources>

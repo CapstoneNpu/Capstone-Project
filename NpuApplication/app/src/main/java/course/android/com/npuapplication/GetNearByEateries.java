@@ -87,6 +87,8 @@ public class GetNearByEateries extends AsyncTask<Object,String,String> {
             ((TextView) result.findViewById(android.R.id.text1)).setText(item.getKey());
             ((TextView) result.findViewById(android.R.id.text2)).setText(item.getValue());
 
+            result.setPadding(10, 15, 5, 15);
+
             return result;
         }
     }

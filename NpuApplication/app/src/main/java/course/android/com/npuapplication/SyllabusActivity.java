@@ -68,7 +68,7 @@ public class SyllabusActivity extends AppCompatActivity {
 
                     @Override
                     public boolean onChildClick(ExpandableListView elv, View view, int g, int c, long id) {
-                        if (g == 1) {
+                        if (g == 0) {
                             Intent textBookIntent = new Intent(view.getContext(), TextbookActivity.class);
                             textBookIntent.putExtra("CourseId", courseId);
                             textBookIntent.putExtra("textBook", mapDataFromDatabase.get(listHeader.get(g)).get(c));
