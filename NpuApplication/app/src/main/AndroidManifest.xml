@@ -65,6 +65,7 @@
         <activity android:name=".TextbookActivity" />
         <activity android:name=".PersoalinfoActivity" />
         <activity android:name=".WeekActivity" />
+        <activity android:name=".FinancialInfoActivity" />
     </application>
 
 </manifest>

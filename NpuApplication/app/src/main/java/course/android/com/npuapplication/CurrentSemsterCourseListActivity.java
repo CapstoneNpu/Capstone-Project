@@ -3,6 +3,10 @@ package course.android.com.npuapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
 import android.view.LayoutInflater;
@@ -35,7 +39,7 @@ import course.android.com.npuapplication.Domain.Course;
 
 import static course.android.com.npuapplication.R.id.bmb_courseList;
 
-public class CurrentSemsterCourseListActivity extends AppCompatActivity {
+public class CurrentSemsterCourseListActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //define variables
     private DataSnapshot courseDataSnapObj;
@@ -49,6 +53,7 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity {
     private CustomeAdaptor customeAdaptor;
     private Hashtable<String, Course> courseHashTable;
     private String[] courseIdStringArray;
+    private DrawerLayout mDrawerLayout;
 
     //selected course from popup
     private String selectedCourseId;
@@ -69,6 +74,9 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity {
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setIcon(R.mipmap.ic_instagram);
 //        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        setNavigationViewListener();
+
         session = new Session(this);
         userDataObj = new UserData();
         courseDataObj = new CourseData();
@@ -106,6 +114,26 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        // Handle navigation view item clicks here.
+        switch (item.getItemId()) {
+
+            case R.id.financial_info: {
+                goToAnotherActivity(CurrentSemsterCourseListActivity.this, FinancialInfoActivity.class);
+                break;
+            }
+        }
+        //close navigation drawer
+        mDrawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    private void setNavigationViewListener() {
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
     public Hashtable<String, Course> dataSnapShotToHashTable(DataSnapshot dataSnapshot) {
         courseHashTable = new Hashtable<>();
         courseIdStringArray = new String[Integer.valueOf(String.valueOf(dataSnapshot.getChildrenCount()))];
@@ -130,7 +158,6 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity {
         return courseHashTable;
     }
 
-    ;
 
     //Navigate to another activity
     public void goToAnotherActivity(Context currentActivity, Class targetActivity) {
