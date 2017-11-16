@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:id="@+id/cs" android:title="Final Grades" android:icon="@drawable/ic_android_black_24dp"></item>
-
-    <item android:id="@+id/at" android:title="Personal" android:icon="@drawable/ic_android_black_24dp"></item>
-    <item android:id="@+id/gd" android:title="Financial" android:icon="@drawable/ic_android_black_24dp"></item>
-    <item android:id="@+id/fe" android:title="Academic" android:icon="@drawable/ic_android_black_24dp"></item>
-    <item android:id="@+id/hw" android:title="Admission" android:icon="@drawable/ic_android_black_24dp"></item>
+    <item android:id="@+id/final_grades" android:title="Final Grades" android:icon="@drawable/ic_android_black_24dp"></item>
+    <item android:id="@+id/personal_info" android:title="Personal" android:icon="@drawable/ic_android_black_24dp"></item>
+    <item android:id="@+id/financial_info" android:title="Financial" android:icon="@drawable/ic_android_black_24dp"></item>
+    <item android:id="@+id/academic_info" android:title="Academic" android:icon="@drawable/ic_android_black_24dp"></item>
+    <item android:id="@+id/admission_info" android:title="Admission" android:icon="@drawable/ic_android_black_24dp"></item>
 </menu>
