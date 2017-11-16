@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -135,6 +136,7 @@ public class HomeworkGradeActivity extends AppCompatActivity {
 
                 viewHolder = new ViewHolder();
                 viewHolder.btnGradeDetail = (Button) convertView.findViewById(R.id.btn_grade_details_list_item);
+                viewHolder.imgViewGradeDetailNavigate = (ImageView) convertView.findViewById(R.id.imgview_grade_details_navigate_to_next_page_id);
 
                 convertView.setTag(viewHolder);
             } else {
@@ -154,6 +156,7 @@ public class HomeworkGradeActivity extends AppCompatActivity {
 
         class ViewHolder {
             Button btnGradeDetail;
+            ImageView imgViewGradeDetailNavigate;
         }
     }
 }

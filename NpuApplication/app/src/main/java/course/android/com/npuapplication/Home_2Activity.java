@@ -18,6 +18,7 @@ public class Home_2Activity extends AppCompatActivity {
     TextView txtmyacct;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_home_2);
         btnmyacc = (ImageButton)findViewById(R.id.btn_myacct);
         txtmyacct = (TextView)findViewById(R.id.txt_myacct);

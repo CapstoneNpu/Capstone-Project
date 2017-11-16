@@ -16,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -55,7 +56,7 @@ public class SyllabusActivity extends AppCompatActivity {
                 courseDataObj.setAllCourseInfo(courseDataObj.fetchAllCourseData(dataSnapshot));
                 courseDataObj.setSelectedCourseInfo(courseDataObj.fetchSelectedCourseInfo(courseId));
                 mapDataFromDatabase = courseDataObj.fetchCourseDetailsForSyllabusPage();
-                listHeader = new ArrayList<String>(mapDataFromDatabase.keySet());
+                listHeader = new ArrayList<String>(Arrays.asList("Weekly Information", "Reference Book", "Textbook"));
                 expandableListCreationObj = new ExpandableListCreation();
                 expandableListView = expandableListCreationObj.createExpandableListView(
                         SyllabusActivity.this,
