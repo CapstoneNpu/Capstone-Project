@@ -4,11 +4,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -72,9 +77,13 @@ public class GradesActivity extends AppCompatActivity {
                 txtViewTotalGrade.setText("Total: " + currentSemesterCourseGradeDeatils.child("Total").child("Gain").getValue().toString() + "%");
                 gradeListItems = new ArrayList<String>();
                 dataSnapShotToArray(currentSemesterCourseGradeDeatils);
-                gradeListItemsAdapter = new ArrayAdapter<String>(GradesActivity.this, android.R.layout.simple_list_item_1, gradeListItems);
                 gradeListView = (ListView) findViewById(R.id.listview_grade_details_id);
-                gradeListView.setAdapter(gradeListItemsAdapter);
+
+                assert gradeListView != null;
+                gradeListView.setAdapter(new MyAdapter());
+
+                /*gradeListItemsAdapter = new ArrayAdapter<String>(GradesActivity.this, android.R.layout.simple_list_item_1, gradeListItems);
+                gradeListView.setAdapter(gradeListItemsAdapter);*/
                 setupListViewListener();
             }
 
@@ -140,4 +149,71 @@ public class GradesActivity extends AppCompatActivity {
         startActivity(intentObj);
     }
 
+    class MyAdapter extends BaseAdapter {
+
+        @Override
+        public int getCount() {
+            return gradeListItems.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, final ViewGroup parent) {
+
+            final ViewHolder viewHolder;
+            if (convertView == null) {
+                convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.grade_details_listview_components, null);
+
+                viewHolder = new ViewHolder();
+                viewHolder.btnGradeDetail = (Button) convertView.findViewById(R.id.btn_grade_details_list_item);
+                viewHolder.imgViewGradeDetailNavigate = (ImageView) convertView.findViewById(R.id.imgview_grade_details_navigate_to_next_page_id);
+
+                convertView.setTag(viewHolder);
+            } else {
+                viewHolder = (ViewHolder) convertView.getTag();
+            }
+
+            viewHolder.btnGradeDetail.setText(gradeListItems.get(position));
+
+            if (position == 0 || position == 1)
+                convertView.findViewById(R.id.imgview_grade_details_navigate_to_next_page_id).setVisibility(View.VISIBLE);
+
+            /*if (viewHolder.btnGradeDetail.getText().toString().substring(0, 8).equals("Homework")) {
+                viewHolder.imgViewGradeDetailNavigate.setVisibility(View.VISIBLE);
+            }
+            if (viewHolder.btnGradeDetail.getText().toString().substring(0, 4).equals("Quiz")) {
+                viewHolder.imgViewGradeDetailNavigate.setVisibility(View.VISIBLE);
+            }*/
+            viewHolder.btnGradeDetail.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (gradeListItems.get(position).substring(0, 8).equals("Homework")) {
+                        Intent homeworkIntent = new Intent(GradesActivity.this, HomeworkGradeActivity.class);
+                        homeworkIntent.putExtra("selectedCourseId", selectedCourseId);
+                        startActivity(homeworkIntent);
+                    }
+                    if (gradeListItems.get(position).toString().substring(0, 4).equals("Quiz")) {
+                        Intent quizIntent = new Intent(GradesActivity.this, QuizGradeActivity.class);
+                        quizIntent.putExtra("selectedCourseId", selectedCourseId);
+                        startActivity(quizIntent);
+                    }
+                }
+            });
+            return convertView;
+        }
+
+        class ViewHolder {
+            Button btnGradeDetail;
+            ImageView imgViewGradeDetailNavigate;
+        }
+    }
 }

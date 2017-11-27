@@ -4,8 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,6 +29,7 @@ public class QuizGradeActivity extends AppCompatActivity {
     ArrayList<String> quizGradeArrayList;
     ArrayAdapter<String> quizGradeArrayAdapter;
     ListView quizGradeListView;
+    TextView quizScoreTotalTextView;
 
     private UserData userDataObj;
     private Session session;
@@ -45,6 +53,8 @@ public class QuizGradeActivity extends AppCompatActivity {
         userDataObj = new UserData();
         gradeIntent = getIntent();
 
+        quizScoreTotalTextView = (TextView) findViewById(R.id.txtview_quiz_grade_title_id);
+
         //firebase database reference object
         firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = firebaseDatabase.getReference();
@@ -56,11 +66,15 @@ public class QuizGradeActivity extends AppCompatActivity {
                 currentSemesterCourseInfo = userDataObj.fetchCurrentSemesterCourseInfo(session.getusename());
                 currentSemesterCourseQuizGradeDeatils = currentSemesterCourseInfo.child(gradeIntent.getStringExtra("selectedCourseId")).child("Grading Policy").child("Quiz");
 
+                quizScoreTotalTextView.setText("Quiz Score: " + String.valueOf(currentSemesterCourseQuizGradeDeatils.child("Gain").getValue())+"%");
                 quizGradeArrayList = new ArrayList<String>();
                 dataSnapShotToArray(currentSemesterCourseQuizGradeDeatils);
-                quizGradeArrayAdapter = new ArrayAdapter<String>(QuizGradeActivity.this, android.R.layout.simple_list_item_1, quizGradeArrayList);
                 quizGradeListView = (ListView) findViewById(R.id.listview_quiz_grade_id);
-                quizGradeListView.setAdapter(quizGradeArrayAdapter);
+
+                quizGradeListView.setAdapter(new MyAdapter());
+
+                /*quizGradeArrayAdapter = new ArrayAdapter<String>(QuizGradeActivity.this, android.R.layout.simple_list_item_1, quizGradeArrayList);
+                quizGradeListView.setAdapter(quizGradeArrayAdapter);*/
             }
 
             @Override
@@ -93,5 +107,55 @@ public class QuizGradeActivity extends AppCompatActivity {
     public void goToAnotherActivity(Context currentActivity, Class targetActivity) {
         Intent intentObj = new Intent(currentActivity, targetActivity);
         startActivity(intentObj);
+    }
+
+    class MyAdapter extends BaseAdapter {
+
+        @Override
+        public int getCount() {
+            return quizGradeArrayList.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, final ViewGroup parent) {
+
+            final ViewHolder viewHolder;
+            if (convertView == null) {
+                convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.grade_details_listview_components, null);
+
+                viewHolder = new ViewHolder();
+                viewHolder.btnGradeDetail = (Button) convertView.findViewById(R.id.btn_grade_details_list_item);
+                viewHolder.imgViewGradeDetailNavigate = (ImageView) convertView.findViewById(R.id.imgview_grade_details_navigate_to_next_page_id);
+
+                convertView.setTag(viewHolder);
+            } else {
+                viewHolder = (ViewHolder) convertView.getTag();
+            }
+
+            viewHolder.btnGradeDetail.setText(quizGradeArrayList.get(position));
+
+            /*GradientDrawable gd = new GradientDrawable(
+                    GradientDrawable.Orientation.TOP_BOTTOM,
+                    new int[]{0xFFDDDDDD, 0xFFd2d7aa});
+            gd.setCornerRadius(0f);
+            convertView.setBackground(gd);*/
+
+            return convertView;
+        }
+
+        class ViewHolder {
+            Button btnGradeDetail;
+            ImageView imgViewGradeDetailNavigate;
+        }
     }
 }

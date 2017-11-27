@@ -3,4 +3,6 @@
     <dimen name="txt_size">18sp</dimen>
     <dimen name="txt_field_login_height">40sp</dimen>
     <dimen name="txt_field_login_width">300sp</dimen>
+    <dimen name="txt_size_title">22dp</dimen>
+    <dimen name="left_padding_course_details_list_text">20dp</dimen>
 </resources>
