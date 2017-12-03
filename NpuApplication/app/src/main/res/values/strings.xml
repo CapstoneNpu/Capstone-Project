@@ -28,4 +28,6 @@
     <string name="text_ham_button_text_normal">Ham Button Text(Normal)</string>
     <string name="text_ham_button_sub_text_normal">Ham Button Sub Text(Normal)</string>
     <string name="txtview_course_details_title_text">Course Details</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
