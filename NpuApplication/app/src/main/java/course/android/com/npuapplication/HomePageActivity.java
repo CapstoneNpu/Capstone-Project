@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.support.v7.widget.Toolbar;
 
 public class HomePageActivity extends AppCompatActivity {
 
     Button btnCourse;
     Button btnLogin;
     Button btnLogout;
+    Toolbar mActionBarToolbar;
 
     //Session class object
     private Session session;
@@ -21,6 +23,10 @@ public class HomePageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        setSupportActionBar(mActionBarToolbar);
+        getSupportActionBar().setTitle("My title");
 
 
         //btnMap = (Button) findViewById(R.id.btn_map_homePage_id);
