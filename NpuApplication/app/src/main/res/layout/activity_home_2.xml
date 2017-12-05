@@ -19,16 +19,17 @@
             android:layout_height="match_parent"
             app:layout_scrollFlags="exitUntilCollapsed|scroll"
             app:contentScrim="?attr/colorPrimary"
-            app:title="NPU"
-            app:expandedTitleMarginStart="48dp"
-            app:expandedTitleMarginEnd="64dp"
-            android:background="@drawable/npu">
+            app:title="Home"
+            app:expandedTitleMarginStart="10dp"
+            android:background="@drawable/npu"
+            app:expandedTitleTextAppearance="@android:color/transparent">
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbarid"
                 android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:layout_collapseMode="pin"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"/>
+                android:layout_height="?attr/actionBarSize">
+            </android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -46,33 +47,31 @@
 
             <ImageButton
                 android:id="@+id/btn_maps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-        android:onClick="btn_otherinfo"
-                android:background="@drawable/maps"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:onClick="btn_otherinfo"
+                android:background="@drawable/map"
                 android:layout_alignParentTop="true"
                 android:layout_alignLeft="@+id/btn_shuttle"
                 android:layout_alignStart="@+id/btn_shuttle" />
 
             <ImageButton
                 android:id="@+id/btn_news"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:background="@drawable/news"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:onClick="btn_news_onClick"
+                android:background="@drawable/newspaper"
                 android:layout_marginRight="39dp"
                 android:layout_marginEnd="39dp"
                 android:layout_alignTop="@+id/btn_maps"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="11dp" />
+                android:layout_alignParentEnd="true"/>
 
             <ImageButton
                 android:id="@+id/btn_shuttle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:background="@drawable/bus"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@drawable/shuttle"
                 android:layout_marginLeft="45dp"
                 android:layout_marginStart="45dp"
                 android:layout_below="@+id/textView2"
@@ -81,24 +80,23 @@
 
             <ImageButton
                 android:id="@+id/btn_soclmd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:onClick="btnSocialMedia_onClick"
-                android:background="@drawable/social"
+                android:background="@drawable/socialmedia"
                 android:layout_alignTop="@+id/btn_shuttle"
                 android:layout_alignLeft="@+id/btn_news"
                 android:layout_alignStart="@+id/btn_news" />
 
             <ImageButton
                 android:id="@+id/btn_rest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:layout_alignLeft="@+id/btn_shuttle"
                 android:layout_alignStart="@+id/btn_shuttle"
                 android:layout_below="@+id/textView4"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/rest"
+                android:background="@drawable/dining"
                 android:onClick="btn_eateries" />
 
             <TextView
@@ -158,13 +156,12 @@
 
             <ImageButton
                 android:id="@+id/btn_myacct"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:layout_alignLeft="@+id/btn_soclmd"
                 android:layout_alignStart="@+id/btn_soclmd"
                 android:layout_alignTop="@+id/btn_rest"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/accnt"
+                android:background="@drawable/login"
                 android:layout_alignBottom="@+id/btn_rest"
                 android:layout_alignRight="@+id/btn_news"
                 android:layout_alignEnd="@+id/btn_news"
@@ -182,21 +179,22 @@
 
             <ImageButton
                 android:id="@+id/btn_library"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:layout_alignEnd="@+id/textView6"
                 android:layout_alignRight="@+id/textView6"
                 android:layout_below="@+id/textView6"
                 android:layout_marginTop="29dp"
                 android:onClick="btn_lib"
-                app:srcCompat="@drawable/lib" />
+                android:background="@drawable/elibrary" />
 
             <TextView
                 android:id="@+id/btn_lib"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="23dp"
+                android:layout_marginTop="10dp"
                 android:text="e-Library"
+                android:textSize="20dp"
                 android:layout_below="@+id/btn_library"
                 android:layout_alignLeft="@+id/textView6"
                 android:layout_alignStart="@+id/textView6" />
