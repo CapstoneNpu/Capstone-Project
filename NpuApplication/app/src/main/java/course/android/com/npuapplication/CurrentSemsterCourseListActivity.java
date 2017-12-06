@@ -208,7 +208,6 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
     }
 
     public void courseHandout_onClick(MenuItem item) {
-        System.out.println("got here");
         Intent courseHandoutIntent = new Intent(this, HandoutActivity.class);
         courseHandoutIntent.putExtra("CourseId", selectedCourseId);
         startActivity(courseHandoutIntent);
