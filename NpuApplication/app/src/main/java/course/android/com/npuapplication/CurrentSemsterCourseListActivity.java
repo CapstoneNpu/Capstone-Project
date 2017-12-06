@@ -208,6 +208,7 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
     }
 
     public void courseHandout_onClick(MenuItem item) {
+        System.out.println("got here");
         Intent courseHandoutIntent = new Intent(this, HandoutActivity.class);
         courseHandoutIntent.putExtra("CourseId", selectedCourseId);
         startActivity(courseHandoutIntent);
@@ -275,7 +276,7 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
                 } else if (boomButton.getTextView().getText().equals("Attendance")) {
                     goToAnotherActivityBoomButton(AttendanceActivity.class, courseIdStringArray[position]);
                 } else if (boomButton.getTextView().getText().equals("Handout")) {
-
+                    goToAnotherActivity(CurrentSemsterCourseListActivity.this, HandoutActivity.class);
                 } else if (boomButton.getTextView().getText().equals("Syllabus")) {
                     goToAnotherActivityBoomButton(SyllabusActivity.class, courseIdStringArray[position]);
                 } else if (boomButton.getTextView().getText().equals("Personal Profile")) {
