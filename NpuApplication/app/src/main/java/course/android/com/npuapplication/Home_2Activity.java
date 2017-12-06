@@ -18,7 +18,6 @@ public class Home_2Activity extends AppCompatActivity {
     TextView txtmyacct;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        getSupportActionBar().hide();
 
         setContentView(R.layout.activity_home_2);
         btnmyacc = (ImageButton)findViewById(R.id.btn_myacct);
@@ -91,9 +90,5 @@ public class Home_2Activity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         goToAnotherActivity(this, Home_2Activity.class);
-    }
-
-    public void btn_news_onClick(View view) {
-        goToAnotherActivity(Home_2Activity.this, NewsActivity.class);
     }
 }

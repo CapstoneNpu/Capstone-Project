@@ -275,7 +275,7 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
                 } else if (boomButton.getTextView().getText().equals("Attendance")) {
                     goToAnotherActivityBoomButton(AttendanceActivity.class, courseIdStringArray[position]);
                 } else if (boomButton.getTextView().getText().equals("Handout")) {
-                    goToAnotherActivity(CurrentSemsterCourseListActivity.this, HandoutActivity.class);
+
                 } else if (boomButton.getTextView().getText().equals("Syllabus")) {
                     goToAnotherActivityBoomButton(SyllabusActivity.class, courseIdStringArray[position]);
                 } else if (boomButton.getTextView().getText().equals("Personal Profile")) {

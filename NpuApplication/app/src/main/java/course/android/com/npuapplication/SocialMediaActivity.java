@@ -15,8 +15,7 @@ public class SocialMediaActivity extends AppCompatActivity {
     }
 
     public void startBrowserActivity(String url) {
-        Intent browserIntent = new Intent(SocialMediaActivity.this, WebViewActivity.class);
-        browserIntent.putExtra("url", url);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(browserIntent);
     }
 
