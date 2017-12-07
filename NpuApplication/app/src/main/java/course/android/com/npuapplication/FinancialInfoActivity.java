@@ -1,6 +1,6 @@
 package course.android.com.npuapplication;
 
-import android.content.Context;
+import android.content.*;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -79,7 +79,7 @@ public class FinancialInfoActivity extends AppCompatActivity {
     }
 }
 
-}
+
 
 class FinancialItem {
     private String date;
