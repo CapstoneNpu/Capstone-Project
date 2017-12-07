@@ -23,14 +23,30 @@
 
         <activity android:name=".HomePageActivity" />
         <activity android:name=".LogInActivity" />
-        <activity android:name=".EventActivity" />
-        <activity android:name=".CurrentSemsterCourseListActivity" />
-        <activity android:name=".CourseDetailsActivity" />
-        <activity android:name=".GradesActivity" />
-        <activity android:name=".AttendanceActivity" />
-        <activity android:name=".HandoutActivity" />
-        <activity android:name=".SyllabusActivity" />
-        <activity android:name=".SocialMediaActivity" />
+        <activity
+            android:name=".EventActivity"
+            android:label="Events" />
+        <activity
+            android:name=".CurrentSemsterCourseListActivity"
+            android:label="Courses" />
+        <activity
+            android:name=".CourseDetailsActivity"
+            android:label="Course Details" />
+        <activity
+            android:name=".GradesActivity"
+            android:label="Grades" />
+        <activity
+            android:name=".AttendanceActivity"
+            android:label="Attendance" />
+        <activity
+            android:name=".HandoutActivity"
+            android:label="Handouts" />
+        <activity
+            android:name=".SyllabusActivity"
+            android:label="Syllabus" />
+        <activity
+            android:name=".SocialMediaActivity"
+            android:label="Social Media" />
         <activity android:name=".StartUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,12 +54,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Home_2Activity" />
-        <activity android:name=".MapsActivity" />
-        <activity android:name=".NearbyEateriesActivity" />
-        <activity android:name=".BuildingInfoActivity" />
-        <activity android:name=".HomeworkGradeActivity" />
-        <activity android:name=".QuizGradeActivity" />
+        <activity
+            android:name=".Home_2Activity"
+            android:label="Home" />
+        <activity
+            android:name=".MapsActivity"
+            android:label="Maps" />
+        <activity
+            android:name=".NearbyEateriesActivity"
+            android:label="Eateries" />
+        <activity
+            android:name=".BuildingInfoActivity"
+            android:label="Building Information" />
+        <activity
+            android:name=".HomeworkGradeActivity"
+            android:label="Homework Grades" />
+        <activity
+            android:name=".QuizGradeActivity"
+            android:label="Quiz Grades" />
 
         <service
             android:name=".MyFirebaseMessagingService"
@@ -61,17 +89,25 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
-        <activity android:name=".TextbookActivity" />
-        <activity android:name=".PersoalinfoActivity" />
-        <activity android:name=".WeekActivity" />
-        <activity android:name=".FinancialInfoActivity" />
-        <activity android:name=".NewsActivity" />
+        
         <activity android:name=".AcademicInfoActivity"></activity>
-        <activity android:name=".FinalGradesActvity">
-
-
-        </activity>
+        <activity android:name=".FinalGradesActvity"></activity>
+        <activity
+            android:name=".TextbookActivity"
+            android:label="Textbook" />
+        <activity
+            android:name=".PersoalinfoActivity"
+            android:label="Personal Information" />
+        <activity
+            android:name=".WeekActivity"
+            android:label="Weekly Information" />
+        <activity
+            android:name=".FinancialInfoActivity"
+            android:label="Financial Information" />
+        <activity
+            android:name=".NewsActivity"
+            android:label="News"></activity>
+        <activity android:name=".WebViewActivity"></activity>
     </application>
 
 </manifest>
