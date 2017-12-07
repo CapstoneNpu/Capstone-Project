@@ -17,7 +17,7 @@ android:src="@drawable/ic_login"
     android:textColor="@color/colorWhite"
     android:textStyle="bold"
     android:layout_marginTop="5dp"
-    android:text="Amy Tayler"/>
+    android:text="Amy Taylor"/>
    android:text="Scott Tiger"-->
 
     <TextView

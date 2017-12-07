@@ -18,7 +18,7 @@ private TextView txtname,txtemail,txtsem,txtspec,txtGPA,txtaddres,txtdob,txtphon
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_persoalinfo);
         UserPersoalInfo userPersoalInfo = new UserPersoalInfo();
-        userPersoalInfo.setUser_name("Amy Tayler");
+        userPersoalInfo.setUser_name("Amy Taylor");
         userPersoalInfo.setUser_email("amy.taylor@npu.edu");
         userPersoalInfo.setUser_cursem("Fall 2017");
         userPersoalInfo.setUser_spec("CS");
