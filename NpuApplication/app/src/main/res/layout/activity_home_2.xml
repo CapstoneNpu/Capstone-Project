@@ -219,24 +219,27 @@
                 android:id="@+id/btn_events"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/elibrary"
+                android:background="@drawable/event"
                 android:onClick="btn_events_action"
-                app:layout_constraintEnd_toEndOf="@+id/textView6"
-                app:layout_constraintRight_toRightOf="@+id/textView6"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_lib" />
+                app:layout_constraintLeft_toLeftOf="@+id/btn_myacct"
+                app:layout_constraintStart_toStartOf="@+id/btn_myacct"
+                app:layout_constraintTop_toTopOf="@+id/btn_library" />
 
             <TextView
                 android:id="@+id/event_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="10dp"
-                android:text="events"
+                android:layout_width="69dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="115dp"
+                android:layout_marginStart="96dp"
+                android:layout_marginTop="20dp"
+                android:text="Events"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_events" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_lib"
+                app:layout_constraintTop_toBottomOf="@+id/btn_events"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/btn_lib"
+                android:layout_marginLeft="32dp" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v4.widget.NestedScrollView>

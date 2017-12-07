@@ -57,18 +57,24 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
         // and move the map's camera to the same location.
         LatLng npuAdminOffice = new LatLng(37.477855, -121.925862);
-        LatLng npuEastBuilding = new LatLng(37.481099, -121.925626);
-        LatLng npuWestBuilding = new LatLng(37.481269, -121.925132);
-        LatLng npuSouthBuilding = new LatLng(37.478877, -121.923936);
+        LatLng npuEastBuilding = new LatLng(37.481365, -121.925140);
+        LatLng npuWestBuilding = new LatLng(37.481219, -121.925641);
+        LatLng npuSouthBuilding1 = new LatLng(37.479352, -121.924128);
+        LatLng npuSouthBuilding2 = new LatLng(37.478877, -121.923936);
+        LatLng npuNorthBuilding = new LatLng(37.486154, -121.928666);
         googleMap.getUiSettings().setZoomControlsEnabled(true);
         googleMap.addMarker(new MarkerOptions().position(npuAdminOffice)
-                .title("NPU").snippet("Admin Building").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+                .title(" NPU").snippet(" Administration Office").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
         googleMap.addMarker(new MarkerOptions().position(npuEastBuilding)
-                .title("NPU").snippet("East Building").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+                .title(" NPU").snippet(" School of Engineering(EAST Bldg.)").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         googleMap.addMarker(new MarkerOptions().position(npuWestBuilding)
-                .title("NPU").snippet("West Building").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
-        googleMap.addMarker(new MarkerOptions().position(npuSouthBuilding)
-                .title("NPU").snippet("South Building").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
+                .title(" NPU").snippet(" Library and Student service center(WEST Bldg.)").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        googleMap.addMarker(new MarkerOptions().position(npuSouthBuilding1)
+                .title(" NPU").snippet(" Online Education Center").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
+        googleMap.addMarker(new MarkerOptions().position(npuSouthBuilding2)
+                .title(" NPU").snippet(" School Of Business and Info.Tech & Recreation Center").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        googleMap.addMarker(new MarkerOptions().position(npuNorthBuilding)
+                .title(" NPU").snippet(" North Building").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(npuAdminOffice));
         googleMap.animateCamera(CameraUpdateFactory.zoomTo(16));
     }
