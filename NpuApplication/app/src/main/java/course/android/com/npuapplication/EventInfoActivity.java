@@ -38,7 +38,7 @@ public class EventInfoActivity extends AppCompatActivity {
                 new EventItems(new Date(2018,0,1),
                         "New Year Holiday; Campus Closed."),
                 new EventItems(new Date(2018,0,4),
-                        "New Year Holiday; Campus Closed.")
+                        "2018 spring New students report to campus/Orientation")
 
         };
         newsListView = (ListView) findViewById(R.id.event_list);
