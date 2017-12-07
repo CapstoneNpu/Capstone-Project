@@ -51,19 +51,6 @@ public class EventAdapter extends BaseAdapter {
 
         EventItems item = this.getItem(position);
 
-
-//        View v = convertView;
-//        result = inflater.inflate(R.layout.event_item, null);
-//
-//        if (inflater == null)
-//            inflater = (LayoutInflater) mActivity
-//                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        if (convertView == null)
-//            convertView = inflater.inflate(R.layout.event_item, null);
-//
-//
-//        EventItems item = this.getItem(position);
-
         TextView name = (TextView) result.findViewById(R.id.event_month);
         name.setText(item.getMonth());
         TextView desc = (TextView) result.findViewById(R.id.event_date);
