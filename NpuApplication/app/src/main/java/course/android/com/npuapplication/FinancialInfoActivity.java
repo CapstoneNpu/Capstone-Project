@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -14,6 +16,10 @@ import com.github.andreilisun.swipedismissdialog.SwipeDismissDialog;
 
 public class FinancialInfoActivity extends AppCompatActivity {
 
+    private Session session;
+    Button btnOK;
+    TextView txtShowDialog;
+    SwipeDismissDialog swipeDismissDialog;
     TableLayout financialTableLayout;
 
     @Override
@@ -50,6 +56,29 @@ public class FinancialInfoActivity extends AppCompatActivity {
 
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    //Home button(Action bar) onClick event handler
+    public void btnGoToHome_onClick(MenuItem item) {
+        goToAnotherActivity(this, Home_2Activity.class);
+    }
+    //Home button(Action bar) onClick event handler
+    public void btnLogOut_onClick(MenuItem item) {
+        session.setusename("");
+        goToAnotherActivity(this, Home_2Activity.class);
+    }
+    //Navigate to another activity
+    public void goToAnotherActivity(Context currentActivity, Class targetActivity) {
+        Intent intentObj = new Intent(currentActivity, targetActivity);
+        startActivity(intentObj);
+    }
+}
+
 }
 
 class FinancialItem {

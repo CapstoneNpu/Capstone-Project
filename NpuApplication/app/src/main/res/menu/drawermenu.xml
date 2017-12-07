@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/final_grades"
         android:title="Final Grades"
-        android:icon="@drawable/grades"> </item>
+        android:icon="@drawable/ic_school"> </item>
 
     <item android:id="@+id/personal_info"
         android:title="Personal"
@@ -10,7 +10,7 @@
 
     <item android:id="@+id/financial_info"
         android:title="Financial"
-        android:icon="@drawable/dollar"></item>
+        android:icon="@drawable/ic_fin"></item>
 
     <item android:id="@+id/academic_info"
         android:title="Academic"
@@ -18,5 +18,5 @@
 
     <item android:id="@+id/admission_info"
         android:title="Admission"
-        android:icon="@drawable/ic_android_black_24dp"></item>
+        android:icon="@drawable/ic_adms"></item>
 </menu>

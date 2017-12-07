@@ -125,7 +125,7 @@ public class CourseDetailsActivity extends AppCompatActivity {
 
     //Home button(Action bar) onClick event handler
     public void btnGoToHome_onClick(MenuItem item) {
-        goToAnotherActivity(this, HomePageActivity.class);
+        goToAnotherActivity(this, Home_2Activity.class);
     }
 
     //Home button(Action bar) onClick event handler

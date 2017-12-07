@@ -18,11 +18,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="course.android.com.npuapplication.AcademicInfoActivity">
 
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
 
+    android:textStyle="bold"
+    android:textSize="20dp"
+    android:paddingLeft="28dp"
+    android:id="@+id/txt_total"
+    android:textColor="@color/colorPrimaryDark"/>
     <android.support.v7.widget.RecyclerView
-
+android:paddingTop="25dp"
         android:id="@+id/academicinfo_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

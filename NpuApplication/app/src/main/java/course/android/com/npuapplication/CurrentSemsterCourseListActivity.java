@@ -64,7 +64,7 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
     //define components
     private ListView courseList;
     private ImageButton imgbtn;
-
+    private TextView txtusername,txtusremail;
     //firebase reference objects
     private FirebaseDatabase firebaseDatabase;
 
@@ -72,6 +72,11 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_semster_course_list);
+        UserPersoalInfo userPersoalInfo = new UserPersoalInfo("Amy Tayler","amy.taylor@npu.edu");
+        txtusername = (TextView) findViewById(R.id.txt_header_name);
+//txtusername.setText(userPersoalInfo.getUser_name());
+        txtusremail= (TextView) findViewById(R.id.txt_header_email);
+        //txtusername.setText(userPersoalInfo.getUser_email());
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setIcon(R.mipmap.ic_instagram);
@@ -149,6 +154,11 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
             case R.id.final_grades:
             {
                 goToAnotherActivity(CurrentSemsterCourseListActivity.this, FinalGradesActvity.class);
+                break;
+            }
+            case R.id.admission_info:
+            {
+                goToAnotherActivity(CurrentSemsterCourseListActivity.this, AdmissionActivity.class);
                 break;
             }
         }

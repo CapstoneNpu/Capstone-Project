@@ -47,7 +47,7 @@
         <activity
             android:name=".SocialMediaActivity"
             android:label="Social Media" />
-        <activity android:name=".StartUpActivity">
+        <activity android:name=".StartUpActivity" android:label="NPU">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -89,9 +89,13 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        
-        <activity android:name=".AcademicInfoActivity"></activity>
-        <activity android:name=".FinalGradesActvity"></activity>
+
+        <activity
+            android:name=".AcademicInfoActivity"
+            android:label="Academic Info" />
+        <activity
+            android:name=".FinalGradesActvity"
+            android:label="Final Grades" />
         <activity
             android:name=".TextbookActivity"
             android:label="Textbook" />
@@ -106,7 +110,10 @@
             android:label="Financial Information" />
         <activity
             android:name=".NewsActivity"
-            android:label="News"></activity>
+            android:label="News" />
+        <activity android:name=".WebViewActivity" />
+        <activity android:name=".AdmissionActivity"
+            android:label="Admission"></activity>
         <activity
             android:name=".ShuttleListActivity"
             android:label="Shuttle"></activity>

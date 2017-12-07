@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Scott Tiger"
+                android:id="@+id/txt_pinfo_name"
                 android:textSize="25dp"
                 android:textStyle="bold"
                 android:textColor="@color/colorWhite"
@@ -55,7 +55,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fall 2017"
+                        android:id="@+id/txt_pinfo_cursem"
+
                         android:textStyle="bold"
                         android:textSize="16dp"
                         android:textColor="@android:color/background_dark"
@@ -78,7 +79,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="CS"
+                        android:id="@+id/txt_pinfo_spec"
+
                         android:textStyle="bold"
                         android:textSize="16dp"
                         android:textColor="@android:color/background_dark"
@@ -100,7 +102,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="4.0"
+                        android:id="@+id/txt_pinfo_gpa"
+
                         android:textStyle="bold"
                         android:textSize="16dp"
                         android:textColor="@android:color/background_dark"
@@ -132,7 +135,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
-                android:text="scott.tiger@npu.edu"
+                android:id="@+id/txt_pinfo_email"
+
                 android:textSize="20dp"/>
         </LinearLayout>
         <LinearLayout
@@ -150,7 +154,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
-                android:text="999-000-9999"
+                android:id="@+id/txt_pinfo_phone"
+
                 android:textSize="20dp"/>
         </LinearLayout>
         <LinearLayout
@@ -168,7 +173,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
-                android:text="47671 Westinghouse Dr,\n Fremont, CA 94539"
+                android:id="@+id/txt_pinfo_add"
+
                 android:textSize="20dp"/>
         </LinearLayout>
 
@@ -187,7 +193,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
-                android:text="1 Jan 9999"
+                android:id="@+id/txt_pinfo_dob"
                 android:textSize="20dp"/>
         </LinearLayout>
     </LinearLayout>

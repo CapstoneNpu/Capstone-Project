@@ -100,14 +100,13 @@
             android:id="@+id/btn_login_homepage_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:background="@mipmap/ic_login"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="15dp"
-            android:layout_marginEnd="15dp"
-            android:onClick="btnLoginHomePage_onClick"/>
+            android:onClick="btnLoginHomePage_onClick"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp" />
 
         <Button
             android:id="@+id/btn_logout_homepage_id"
@@ -118,14 +117,18 @@
             android:layout_alignLeft="@+id/btn_login_homepage_id"
             android:layout_alignStart="@+id/btn_login_homepage_id"
             android:onClick="btnLogoutHomePage_onClick"
-            android:text="Logout" />
+            android:text="Logout"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp" />
 
         <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_actionbar"
         android:background="@null"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:fitsSystemWindows="true" />
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:fitsSystemWindows="true"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="8dp" />
     <!--</RelativeLayout> -->
 
 </android.support.constraint.ConstraintLayout>

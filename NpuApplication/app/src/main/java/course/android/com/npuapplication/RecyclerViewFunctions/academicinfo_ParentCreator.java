@@ -54,9 +54,10 @@ public class academicinfo_ParentCreator {
 
         HashMap<String, String> hmapparent = new HashMap<String, String>();
         hmapparent.put("Foundation Requirements","(9.0/9.0)");
-        hmapparent.put("Software Engineering Course Requirements","(12.0/12.0)");
-        hmapparent.put("Electives","(12.0/12.0)");
+        hmapparent.put("Software Engineering Course Requirements","(6.0/12.0)");
+
         hmapparent.put("Capstone Course","(3.0/3.0)");
+        hmapparent.put("Electives","(9.0/12.0)");
         return hmapparent;
     }
     public List<String> getCategory() {
