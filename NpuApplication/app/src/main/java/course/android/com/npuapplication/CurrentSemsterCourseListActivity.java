@@ -9,6 +9,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -38,6 +39,7 @@ import course.android.com.npuapplication.Database.UserData;
 import course.android.com.npuapplication.Domain.Course;
 
 import static course.android.com.npuapplication.R.id.bmb_courseList;
+import static course.android.com.npuapplication.R.id.drawer;
 
 public class CurrentSemsterCourseListActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -54,7 +56,7 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
     private Hashtable<String, Course> courseHashTable;
     private String[] courseIdStringArray;
     private DrawerLayout mDrawerLayout;
-
+    private ActionBarDrawerToggle mToggle;
     //selected course from popup
     private String selectedCourseId;
 
@@ -75,6 +77,11 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
 //        getSupportActionBar().setIcon(R.mipmap.ic_instagram);
 //        getSupportActionBar().setDisplayUseLogoEnabled(true);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+
+        mToggle = new ActionBarDrawerToggle(this,mDrawerLayout,R.string.open,R.string.close);
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+ getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setNavigationViewListener();
 
         session = new Session(this);
@@ -113,7 +120,14 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
             }
         });
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(mToggle.onOptionsItemSelected(item))
+        {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
@@ -121,6 +135,10 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
 
             case R.id.financial_info: {
                 goToAnotherActivity(CurrentSemsterCourseListActivity.this, FinancialInfoActivity.class);
+                break;
+            }
+            case R.id.personal_info: {
+                goToAnotherActivity(CurrentSemsterCourseListActivity.this, PersoalinfoActivity.class);
                 break;
             }
         }
@@ -257,7 +275,7 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
                 } else if (boomButton.getTextView().getText().equals("Attendance")) {
                     goToAnotherActivityBoomButton(AttendanceActivity.class, courseIdStringArray[position]);
                 } else if (boomButton.getTextView().getText().equals("Handout")) {
-
+                    goToAnotherActivity(CurrentSemsterCourseListActivity.this, HandoutActivity.class);
                 } else if (boomButton.getTextView().getText().equals("Syllabus")) {
                     goToAnotherActivityBoomButton(SyllabusActivity.class, courseIdStringArray[position]);
                 } else if (boomButton.getTextView().getText().equals("Personal Profile")) {

@@ -119,6 +119,13 @@
             android:layout_alignStart="@+id/btn_login_homepage_id"
             android:onClick="btnLogoutHomePage_onClick"
             android:text="Logout" />
+
+        <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_actionbar"
+        android:background="@null"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:fitsSystemWindows="true" />
     <!--</RelativeLayout> -->
 
 </android.support.constraint.ConstraintLayout>
