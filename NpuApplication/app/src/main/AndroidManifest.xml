@@ -107,7 +107,13 @@
         <activity
             android:name=".NewsActivity"
             android:label="News"></activity>
-        <activity android:name=".WebViewActivity"></activity>
+        <activity
+            android:name=".ShuttleListActivity"
+            android:label="Shuttle"></activity>
+        <activity
+            android:name=".EventInfoActivity"
+        android:label="Event"></activity>
+    <activity android:name=".WebViewActivity"></activity>
     </application>
 
 </manifest>
