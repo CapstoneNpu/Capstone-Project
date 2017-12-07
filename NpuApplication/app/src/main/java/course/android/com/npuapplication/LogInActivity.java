@@ -33,6 +33,7 @@ public class LogInActivity extends AppCompatActivity {
     private DataSnapshot userLoginDataSnapObj;
     private Session session;
 
+
     //define Animation variables
     private Animation animation;
 
@@ -123,6 +124,7 @@ public class LogInActivity extends AppCompatActivity {
         if (userLoginDataSnapObj != null && userLoginDataSnapObj.child(encryptedPassword).hasChildren()) {
             txtViewErrorMsgLogin.setVisibility(View.INVISIBLE);
             session.setusename(encryptedPassword);
+
             goToAnotherActivity(LogInActivity.this, CurrentSemsterCourseListActivity.class);
         }
         else{
