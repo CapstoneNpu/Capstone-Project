@@ -141,6 +141,16 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
                 goToAnotherActivity(CurrentSemsterCourseListActivity.this, PersoalinfoActivity.class);
                 break;
             }
+            case R.id.academic_info:
+            {
+                goToAnotherActivity(CurrentSemsterCourseListActivity.this, AcademicInfoActivity.class);
+                break;
+            }
+            case R.id.final_grades:
+            {
+                goToAnotherActivity(CurrentSemsterCourseListActivity.this, FinalGradesActvity.class);
+                break;
+            }
         }
         //close navigation drawer
         mDrawerLayout.closeDrawer(GravityCompat.START);
