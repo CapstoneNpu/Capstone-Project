@@ -89,7 +89,9 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
+        
+        <activity android:name=".AcademicInfoActivity"></activity>
+        <activity android:name=".FinalGradesActvity"></activity>
         <activity
             android:name=".TextbookActivity"
             android:label="Textbook" />
@@ -105,7 +107,13 @@
         <activity
             android:name=".NewsActivity"
             android:label="News"></activity>
-        <activity android:name=".WebViewActivity"></activity>
+        <activity
+            android:name=".ShuttleListActivity"
+            android:label="Shuttle"></activity>
+        <activity
+            android:name=".EventInfoActivity"
+        android:label="Event"></activity>
+    <activity android:name=".WebViewActivity"></activity>
     </application>
 
 </manifest>
