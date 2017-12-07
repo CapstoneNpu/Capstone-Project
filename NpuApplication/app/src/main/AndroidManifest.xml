@@ -114,6 +114,13 @@
         <activity android:name=".WebViewActivity" />
         <activity android:name=".AdmissionActivity"
             android:label="Admission"></activity>
+        <activity
+            android:name=".ShuttleListActivity"
+            android:label="Shuttle"></activity>
+        <activity
+            android:name=".EventInfoActivity"
+        android:label="Event"></activity>
+    <activity android:name=".WebViewActivity"></activity>
     </application>
 
 </manifest>

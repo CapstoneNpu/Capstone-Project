@@ -50,7 +50,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this, CHANNEL_ID)
                         .setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentTitle("FCM Message")
+                        .setContentTitle("NPU Notification")
                         .setContentText(messageBody)
                         .setAutoCancel(true)
                         .setSound(defaultSoundUri)
