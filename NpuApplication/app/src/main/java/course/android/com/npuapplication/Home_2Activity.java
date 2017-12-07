@@ -96,4 +96,10 @@ public class Home_2Activity extends AppCompatActivity {
     public void btn_news_onClick(View view) {
         goToAnotherActivity(Home_2Activity.this, NewsActivity.class);
     }
+    public void btn_shuttle_onClick(View view) {
+        goToAnotherActivity(this, ShuttleListActivity.class);
+    }
+    public void btn_events_action(View view) {
+        goToAnotherActivity(this, EventInfoActivity.class);
+    }
 }
