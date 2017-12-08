@@ -2,13 +2,11 @@ package course.android.com.npuapplication;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class PersoalinfoActivity extends AppCompatActivity {
 private TextView txtname,txtemail,txtsem,txtspec,txtGPA,txtaddres,txtdob,txtphone;
@@ -22,10 +20,10 @@ private TextView txtname,txtemail,txtsem,txtspec,txtGPA,txtaddres,txtdob,txtphon
         userPersoalInfo.setUser_email("amy.taylor@npu.edu");
         userPersoalInfo.setUser_cursem("Fall 2017");
         userPersoalInfo.setUser_spec("CS");
-        userPersoalInfo.setUser_curgpa("4.0");
+        userPersoalInfo.setUser_curgpa("3.9");
         userPersoalInfo.setUser_address("47671 Westinghouse Dr, Fremont, CA 94539");
         userPersoalInfo.setUser_phone("999-000-9999");
-        userPersoalInfo.setUser_dob("1 Jan 9999");
+        userPersoalInfo.setUser_dob("1 Jan 1990");
 
         txtname = (TextView)findViewById(R.id.txt_pinfo_name);
         txtname.setText(userPersoalInfo.getUser_name());
