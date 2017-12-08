@@ -24,6 +24,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Amy Taylor"
                 android:id="@+id/txt_pinfo_name"
                 android:textSize="25dp"
                 android:textStyle="bold"
@@ -102,8 +103,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="3.9"
                         android:id="@+id/txt_pinfo_gpa"
-
                         android:textStyle="bold"
                         android:textSize="16dp"
                         android:textColor="@android:color/background_dark"
@@ -135,8 +136,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
+                android:text="amy.taylor@npu.edu"
                 android:id="@+id/txt_pinfo_email"
-
                 android:textSize="20dp"/>
         </LinearLayout>
         <LinearLayout
@@ -193,6 +194,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
+                android:text="1 Jan 1990"
                 android:id="@+id/txt_pinfo_dob"
                 android:textSize="20dp"/>
         </LinearLayout>

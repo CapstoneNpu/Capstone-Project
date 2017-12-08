@@ -16,8 +16,8 @@
     <item android:id="@+id/menu_syllabus"
         android:title="Syllabus"
         android:onClick="courseSyllabus_onClick"/>
-    <item
+    <!--<item
         android:id="@+id/personal"
         android:title="Personal Profile"
-        android:onClick="personainfo_onClick" />
+        android:onClick="personainfo_onClick" />-->
 </menu>
