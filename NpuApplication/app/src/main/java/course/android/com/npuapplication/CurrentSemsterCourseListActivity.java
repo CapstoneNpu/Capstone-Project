@@ -7,9 +7,9 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -39,7 +39,6 @@ import course.android.com.npuapplication.Database.UserData;
 import course.android.com.npuapplication.Domain.Course;
 
 import static course.android.com.npuapplication.R.id.bmb_courseList;
-import static course.android.com.npuapplication.R.id.drawer;
 
 public class CurrentSemsterCourseListActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -434,15 +433,15 @@ public class CurrentSemsterCourseListActivity extends AppCompatActivity implemen
                     //.normalImageRes(getImageResource())
                     .normalTextRes(R.string.course_syallbus);
 
-            HamButton.Builder hamBtnBuilder_personalProfile = new HamButton.Builder()
-                    .normalTextRes(R.string.personal_profile);
+            /*HamButton.Builder hamBtnBuilder_personalProfile = new HamButton.Builder()
+                    .normalTextRes(R.string.personal_profile);*/
 
             viewHolder.bmb_courseList.addBuilder(hamBtnBuilder_details);
             viewHolder.bmb_courseList.addBuilder(hamBtnBuilder_grade);
             viewHolder.bmb_courseList.addBuilder(hamBtnBuilder_attendance);
             viewHolder.bmb_courseList.addBuilder(hamBtnBuilder_handout);
             viewHolder.bmb_courseList.addBuilder(hamBtnBuilder_syallbus);
-            viewHolder.bmb_courseList.addBuilder(hamBtnBuilder_personalProfile);
+            //viewHolder.bmb_courseList.addBuilder(hamBtnBuilder_personalProfile);
 
             boomButtonListener(position, viewHolder);
 

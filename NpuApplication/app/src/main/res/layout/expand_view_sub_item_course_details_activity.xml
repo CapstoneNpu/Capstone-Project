@@ -7,8 +7,9 @@
         android:id="@+id/txtview_expand_view_sub_item_course_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/txt_size"
-        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="35dp"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
+        android:textColor="@color/colorGrey"
+        android:textSize="@dimen/txt_size" />
 </LinearLayout>

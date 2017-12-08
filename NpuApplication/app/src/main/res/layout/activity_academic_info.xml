@@ -25,7 +25,10 @@
 
         android:id="@+id/academicinfo_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_selector">
 
     </android.support.v7.widget.RecyclerView>
 </RelativeLayout>

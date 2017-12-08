@@ -13,14 +13,14 @@ android:src="@drawable/ic_login"
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Scott Tiger"
+    android:text="Amy Taylor"
     android:textColor="@color/colorWhite"
     android:textStyle="bold"
     android:layout_marginTop="5dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="scott.19462@npu.edu"
+        android:text="amy.taylor@npu.edu"
         android:textColor="@color/colorWhite"
         android:textStyle="bold"
         android:layout_marginTop="4dp"/>

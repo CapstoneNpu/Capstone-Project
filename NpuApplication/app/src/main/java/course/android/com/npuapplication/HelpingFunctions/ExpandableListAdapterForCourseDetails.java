@@ -17,14 +17,14 @@ import course.android.com.npuapplication.R;
  * Created by Bansari on 10/9/2017.
  */
 
-public class ExpandableListAdapter extends BaseExpandableListAdapter {
+public class ExpandableListAdapterForCourseDetails extends BaseExpandableListAdapter {
 
     private Context context;
     private List<String> listHeader;
     private HashMap<String, List<String>> listHashMap;
     private boolean isChildClickable;
 
-    public ExpandableListAdapter(Context context, List<String> listHeader, HashMap<String, List<String>> listHashMap, boolean isChildClickable) {
+    public ExpandableListAdapterForCourseDetails(Context context, List<String> listHeader, HashMap<String, List<String>> listHashMap, boolean isChildClickable) {
         this.context = context;
         this.listHeader = listHeader;
         this.listHashMap = listHashMap;
