@@ -2,29 +2,23 @@ package course.android.com.npuapplication;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.bignerdranch.expandablerecyclerview.Model.ParentObject;
-import com.google.firebase.database.DataSnapshot;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
-import course.android.com.npuapplication.Adaptor.*;
-import course.android.com.npuapplication.HelpingFunctions.ExpandableListCreation;
-import course.android.com.npuapplication.RecyclerViewFunctions.*;
+import course.android.com.npuapplication.Adaptor.acdinfo_Adaptor;
+import course.android.com.npuapplication.RecyclerViewFunctions.academicinfo_Child;
 import course.android.com.npuapplication.RecyclerViewFunctions.academicinfo_ParentCreator;
+import course.android.com.npuapplication.RecyclerViewFunctions.acdemicinfo_Parent;
 public class AcademicInfoActivity extends AppCompatActivity {
 //    private ExpandableListView expandableListView;
 //    private ExpandableListCreation expandableListCreationObj;
@@ -136,6 +130,8 @@ public class AcademicInfoActivity extends AppCompatActivity {
 
             childList.add(new academicinfo_Child("CS571 - Cloud Management- Hadoop Administration", "A+"));
             childList.add(new academicinfo_Child("CS556(A) - Mobile Applications on iPhone Platform", "A+"));
+            childList.add(new academicinfo_Child("CS5557 - Web Front-end Programming for Mobile Devices", "IP"));
+            childList.add(new academicinfo_Child("CS548(B) - Web Services Techniques and REST Technologies", "A+"));
            // childList.add(new academicinfo_Child("CS571 - Cloud Management- Hadoop Administration", "A"));
             //childList.add(new academicinfo_Child("CS557(A) - Web Front-end Programming for Mobile Devices", "A-"));
             //childList.add(new academicinfo_Child("CS501(A) -Advanced Structured Programming and Algorithms", "A+"));
@@ -146,7 +142,7 @@ public class AcademicInfoActivity extends AppCompatActivity {
         if (titleParent == "Electives") {
             childList.add(new academicinfo_Child("P450 - Career Development", "A+"));
             childList.add(new academicinfo_Child("CCS551 - Mobile Computing for Android Mobile Devices", "A+"));
-            childList.add(new academicinfo_Child("CS532(A) - Advanced Internet Programming and Design", "IP"));
+            childList.add(new academicinfo_Child("CS532(A) - Advanced Internet Programming and Design", "A"));
         }
         if (titleParent == "Capstone Course") {
             childList.add(new academicinfo_Child("CS595 - Computer Science Capstone Course ", "IP"));
