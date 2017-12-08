@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.support.v7.widget.Toolbar;
@@ -91,6 +93,18 @@ public class HomePageActivity extends AppCompatActivity {
         goToAnotherActivity(this, SocialMediaActivity.class);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+
+    //Home button(Action bar) onClick event handler
+    public void btnLogOut_onClick(MenuItem item) {
+        session.setusename("");
+        goToAnotherActivity(this, Home_2Activity.class);
+    }
 
 
 }

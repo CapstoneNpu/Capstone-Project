@@ -57,6 +57,7 @@ public class EventAdapter extends BaseAdapter {
         desc.setText(item.getDate());
         TextView time = (TextView) result.findViewById(R.id.event_details);
         time.setText(item.getDetails());
+
         result.setPadding(10, 30, 5, 30);
 
         return result;

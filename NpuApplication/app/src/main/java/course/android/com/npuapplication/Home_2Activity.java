@@ -42,8 +42,13 @@ public class Home_2Activity extends AppCompatActivity {
             getMenuInflater().inflate(R.menu.home_toolbar, menu);
             return  true;
         }
+        else
+        {
+            getMenuInflater().inflate(R.menu.home_logout_toolbar, menu);
+            return  true;
+        }
 
-       return false;
+      // return false;
     }
 
     //Navigate to another activity
@@ -88,6 +93,10 @@ public class Home_2Activity extends AppCompatActivity {
         goToAnotherActivity(this, SocialMediaActivity.class);
     }
 
+    public void btnLogOut_onClick(MenuItem item) {
+        session.setusename("");
+        goToAnotherActivity(this, Home_2Activity.class);
+    }
     @Override
     public void onBackPressed() {
         goToAnotherActivity(this, Home_2Activity.class);
@@ -102,4 +111,5 @@ public class Home_2Activity extends AppCompatActivity {
     public void btn_events_action(View view) {
         goToAnotherActivity(this, EventInfoActivity.class);
     }
+
 }

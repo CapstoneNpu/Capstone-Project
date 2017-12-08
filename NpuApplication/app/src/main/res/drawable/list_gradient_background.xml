@@ -6,13 +6,16 @@
             android:shape="rectangle">
             <gradient
 
-                android:startColor="#D5DDE0"
+                android:startColor="#F9F9F9"
 
-                android:centerColor="#e7e7e8"
+                android:centerColor="#dee0e1"
 
-                android:endColor="#CFCFCF"
+                android:endColor="#BDBABA"
 
                 android:angle="270" />
+                <!--D2C9C9"-->
+
+
         </shape>
     </item>
 </selector>

@@ -1,11 +1,16 @@
 package course.android.com.npuapplication;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.TextView;
 
 import com.bignerdranch.expandablerecyclerview.Model.ParentObject;
 import com.google.firebase.database.DataSnapshot;
@@ -29,7 +34,8 @@ public class AcademicInfoActivity extends AppCompatActivity {
 //    List<String> fodcrs;
 
     RecyclerView acdemicRecyclerview;
-
+    private Session session;
+    TextView txttotal;
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -47,6 +53,8 @@ public class AcademicInfoActivity extends AppCompatActivity {
         myadaptor.setParentClickableViewAnimationDefaultDuration();
         myadaptor.setParentAndIconExpandOnClick(true);
         acdemicRecyclerview.setAdapter(myadaptor);
+        txttotal = (TextView)findViewById(R.id.txt_total);
+        txttotal.setText("Degree Requirements (27.0/36.0)");
 
 //        listHeader = new ArrayList<String>(Arrays.asList("Foundation Requirements", "Software Engineering Course Requirements", "Electives","Capstone Course"));
 //         fodcrs=new ArrayList<String>();//(Arrays.asList("Foundation Requirements", "Software Engineering Course Requirements", "Electives","Capstone Course"));
@@ -94,6 +102,26 @@ public class AcademicInfoActivity extends AppCompatActivity {
         return parentObject;
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    //Home button(Action bar) onClick event handler
+    public void btnGoToHome_onClick(MenuItem item) {
+        goToAnotherActivity(this, Home_2Activity.class);
+    }
+    //Home button(Action bar) onClick event handler
+    public void btnLogOut_onClick(MenuItem item) {
+        session.setusename("");
+        goToAnotherActivity(this, Home_2Activity.class);
+    }
+    //Navigate to another activity
+    public void goToAnotherActivity(Context currentActivity, Class targetActivity) {
+        Intent intentObj = new Intent(currentActivity, targetActivity);
+        startActivity(intentObj);
+    }
     public List<Object> getChildListForParent(String titleParent) {
         List<Object> childList = new ArrayList<>();
         if (titleParent == "Foundation Requirements") {
@@ -106,14 +134,22 @@ public class AcademicInfoActivity extends AppCompatActivity {
 
         if (titleParent == "Software Engineering Course Requirements") {
 
-            childList.add(new academicinfo_Child("CS532(A) - Advanced Internet Programming and Design", "A+"));
+            childList.add(new academicinfo_Child("CS571 - Cloud Management- Hadoop Administration", "A+"));
             childList.add(new academicinfo_Child("CS556(A) - Mobile Applications on iPhone Platform", "A+"));
-            childList.add(new academicinfo_Child("CS571 - Cloud Management- Hadoop Administration", "A"));
-            childList.add(new academicinfo_Child("CS557(A) - Web Front-end Programming for Mobile Devices", "A-"));
-//            childList.add(new academicinfo_Child("CS501(A) -Advanced Structured Programming and Algorithms", "A+"));
+           // childList.add(new academicinfo_Child("CS571 - Cloud Management- Hadoop Administration", "A"));
+            //childList.add(new academicinfo_Child("CS557(A) - Web Front-end Programming for Mobile Devices", "A-"));
+            //childList.add(new academicinfo_Child("CS501(A) -Advanced Structured Programming and Algorithms", "A+"));
 //            childList.add(new academicinfo_Child("CS457(B) - Data Modeling and Implementation Techniques", "A"));
 //            childList.add(new academicinfo_Child("CS480(D) - Java and Internet Applications", "A"));
 
+        }
+        if (titleParent == "Electives") {
+            childList.add(new academicinfo_Child("P450 - Career Development", "A+"));
+            childList.add(new academicinfo_Child("CCS551 - Mobile Computing for Android Mobile Devices", "A+"));
+            childList.add(new academicinfo_Child("CS532(A) - Advanced Internet Programming and Design", "IP"));
+        }
+        if (titleParent == "Capstone Course") {
+            childList.add(new academicinfo_Child("CS595 - Computer Science Capstone Course ", "IP"));
         }
         return childList;
     }

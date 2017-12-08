@@ -1,9 +1,13 @@
 package course.android.com.npuapplication;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.bignerdranch.expandablerecyclerview.Model.ParentObject;
 
@@ -22,6 +26,7 @@ import course.android.com.npuapplication.RecyclerViewFunctions.acdemicinfo_Paren
 
 public class FinalGradesActvity extends AppCompatActivity {
     RecyclerView finalGDRecyclerview;
+    private Session session;
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -68,9 +73,39 @@ public class FinalGradesActvity extends AppCompatActivity {
 
         if (titleParent == "2017 Spring") {
 
+            childList.add(new Finalgrades_Child("CS557","Web Front-end Programming for Mobile Devices (3)","A"));
+            childList.add(new Finalgrades_Child("CS501","Advanced Structured Programming & Algorithms (3)","A+"));
+            childList.add(new Finalgrades_Child("CS556" ,"Mobile Applications on iPhone Platform (3)", "A"));
+
+        }
+        if (titleParent == "2017 Fall") {
+
+            childList.add(new Finalgrades_Child("CS548","Web Services Techniques and REST Technologies (3)","IP"));
+            childList.add(new Finalgrades_Child("CS551","Mobile Computing for Android Mobile Devices (3)","IP"));
+            childList.add(new Finalgrades_Child("CS595" ,"Computer Science Capstone Course (3)", "IP"));
 
         }
         return childList;
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    //Home button(Action bar) onClick event handler
+    public void btnGoToHome_onClick(MenuItem item) {
+        goToAnotherActivity(this, Home_2Activity.class);
+    }
+    //Home button(Action bar) onClick event handler
+    public void btnLogOut_onClick(MenuItem item) {
+        session.setusename("");
+        goToAnotherActivity(this, Home_2Activity.class);
+    }
+    //Navigate to another activity
+    public void goToAnotherActivity(Context currentActivity, Class targetActivity) {
+        Intent intentObj = new Intent(currentActivity, targetActivity);
+        startActivity(intentObj);
     }
 }
 

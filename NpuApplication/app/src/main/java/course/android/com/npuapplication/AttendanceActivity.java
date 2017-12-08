@@ -9,7 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -75,7 +75,7 @@ weeklistvew.setAdapter(adapter);
         ArrayList<PieEntry> yValues = new ArrayList<>();
         yValues.add(new PieEntry(5f,"Absent"));
         yValues.add(new PieEntry(34f,"Present"));
-        yValues.add(new PieEntry(12f,"Early Leave"));
+        yValues.add(new PieEntry(4f,"Early Leave"));
         yValues.add(new PieEntry(15f,"Late come"));
 
         PieDataSet dataset =  new PieDataSet(yValues,"Attemdace");
@@ -88,25 +88,38 @@ dataset.setValueTextSize(12f);
         data.setValueTextSize(18f);
        // data.setValueTextColors(Color.BLACK);
         attenChrt.setData(data);
+        AlertDialog.Builder builder = new AlertDialog.Builder(AttendanceActivity.this);
+        builder.setCancelable(true);
+        //builder.setPositiveButton("OK",null);
+
+
+        builder.setView(weeklistvew);
+        final AlertDialog dialog = builder.create();
+        // AlertDialog alert = build.create();
         attenChrt.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, Highlight h) {
                 String temp = e.toString();
+//                Context context = getApplicationContext();
+//                CharSequence text = "Hello toast!";
+//                int duration = Toast.LENGTH_SHORT;
+//
+//                Toast toast = Toast.makeText(context, text, duration);
+//                toast.show();
                // Toast.makeText(AttendanceActivity.this,e.toString(),Toast.LENGTH_LONG).show();
                 //ViewGroup viewGroup = (ViewGroup) view;
                 //((ViewGroup)txtwk.getParent()).removeView(txtwk);
-                AlertDialog.Builder builder = new AlertDialog.Builder(AttendanceActivity.this);
-               builder.setCancelable(true);
-                //builder.setPositiveButton("OK",null);
-                builder.setView(weeklistvew);
-                AlertDialog dialog = builder.create();
+                LayoutInflater mInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                final ViewGroup viewGroup= (ViewGroup) mInflater.inflate(R.layout.activity_attendance, null);
+
+
 
 //                final Dialog dialog = new Dialog(context);
 //                dialog.setContentView(R.layout.activity_dialog_attendance);
 //                dialog.setTitle("Title...");
 
 
-              dialog.show();
+            dialog.show();
                 //dialog.hide();
 
             }

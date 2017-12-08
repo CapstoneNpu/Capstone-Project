@@ -40,10 +40,10 @@ public class Finalgrades_ParentCreator {
     public HashMap<String,String> getParentCategory() {
 
         HashMap<String, String> hmapparent = new HashMap<String, String>();
-        hmapparent.put("2016 Fall","4.0");
+        hmapparent.put("2017 Fall","IP");
         hmapparent.put("2017 Spring","3.9");
-        hmapparent.put("2017 Summer","4.0");
-        hmapparent.put("2017 Fall","3.8");
+       // hmapparent.put("2017 Summer","4.0");
+        hmapparent.put("2016 Fall","4.0");
         return hmapparent;
     }
 

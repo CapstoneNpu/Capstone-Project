@@ -30,4 +30,6 @@
     <string name="txtview_course_details_title_text">Course Details</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="Username"></string>
+    <string name="User_email"></string>
 </resources>
