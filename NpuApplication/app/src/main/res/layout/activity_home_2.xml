@@ -38,209 +38,246 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <android.support.constraint.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="40dp"
             android:paddingBottom="40dp"
-            android:id="@+id/relativeLayout">
-
-            <ImageButton
-                android:id="@+id/btn_maps"
-                android:layout_width="80dp"
+            android:id="@+id/relativeLayout"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:onClick="btn_otherinfo"
-                android:background="@drawable/map"
-                android:layout_marginTop="20dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/btn_shuttle"
-                app:layout_constraintLeft_toLeftOf="@+id/btn_shuttle" />
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight ="1"
+                    >
+                    <ImageButton
+                        android:id="@+id/btn_maps"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:onClick="btn_otherinfo"
+                        android:background="@drawable/map"
+                        />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="20dp"
-                android:text="Maps"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="@+id/btn_shuttle"
-                app:layout_constraintRight_toRightOf="@+id/btn_shuttle"
-                app:layout_constraintTop_toBottomOf="@+id/btn_maps" />
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Maps"
+                        android:textSize="16dp"
+                        />
 
-            <ImageButton
-                android:id="@+id/btn_news"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:onClick="btn_news_onClick"
-                android:background="@drawable/newspaper"
-                android:layout_marginRight="20dp"
-                android:layout_marginEnd="70dp"
-                app:layout_constraintTop_toTopOf="@+id/btn_maps"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintRight_toRightOf="parent" />
+                </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="19dp"
-                android:layout_marginTop="20dp"
-                android:text="News"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="@+id/btn_news"
-                app:layout_constraintRight_toRightOf="@+id/btn_news"
-                app:layout_constraintTop_toBottomOf="@+id/btn_maps" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight ="1"
+                    >
+                    <ImageButton
+                        android:id="@+id/btn_news"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:onClick="btn_news_onClick"
+                        android:background="@drawable/newspaper"
+                        />
 
-            <ImageButton
-                android:id="@+id/btn_shuttle"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="60dp"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/shuttle"
-                android:onClick="btn_shuttle_onClick"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Shuttle"
-                android:textSize="20dp"
-                app:layout_constraintLeft_toLeftOf="@+id/textView2"
-                app:layout_constraintStart_toStartOf="@+id/textView2"
-                app:layout_constraintTop_toBottomOf="@+id/btn_shuttle" />
+                        android:text="News"
+                        android:textSize="18dp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight ="1"
+                    >
+                    <ImageButton
+                        android:id="@+id/btn_shuttle"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
 
-            <ImageButton
-                android:id="@+id/btn_soclmd"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:onClick="btnSocialMedia_onClick"
-                android:background="@drawable/socialmedia"
-                app:layout_constraintTop_toTopOf="@+id/btn_shuttle"
-                app:layout_constraintStart_toStartOf="@+id/btn_news"
-                app:layout_constraintLeft_toLeftOf="@+id/btn_news" />
+                        android:background="@drawable/shuttle"
+                        android:onClick="btn_shuttle_onClick"
+                        />
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="20dp"
-                android:text="Social Media"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="@+id/btn_soclmd"
-                app:layout_constraintRight_toRightOf="@+id/btn_soclmd"
-                app:layout_constraintStart_toEndOf="@+id/textView4"
-                app:layout_constraintTop_toBottomOf="@+id/btn_soclmd" />
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-            <ImageButton
-                android:id="@+id/btn_rest"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/dining"
-                android:onClick="btn_eateries"
-                app:layout_constraintStart_toStartOf="@+id/btn_shuttle"
-                app:layout_constraintTop_toBottomOf="@+id/textView4"
-                app:layout_constraintLeft_toLeftOf="@+id/btn_shuttle" />
+                        android:text="Shuttle"
+                        android:textSize="18dp"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="105dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight ="1"
+                    >
+                    <ImageButton
+                        android:id="@+id/btn_soclmd"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:onClick="btnSocialMedia_onClick"
+                        android:background="@drawable/socialmedia"
+                        />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Dining"
-                android:textSize="20dp"
-                app:layout_constraintLeft_toLeftOf="@+id/textView4"
-                app:layout_constraintStart_toStartOf="@+id/textView4"
-                app:layout_constraintTop_toBottomOf="@+id/btn_rest" />
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Social Media"
+                        android:textSize="18dp"
+                        />
 
-            <ImageButton
-                android:id="@+id/btn_myacct"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@drawable/login"
-                android:onClick="btnCourseHomePage_onClick"
-                app:layout_constraintTop_toTopOf="@+id/btn_rest"
-                app:layout_constraintStart_toStartOf="@+id/btn_soclmd"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_rest"
-                app:layout_constraintEnd_toEndOf="@+id/btn_news"
-                app:layout_constraintLeft_toLeftOf="@+id/btn_soclmd"
-                app:layout_constraintRight_toRightOf="@+id/btn_news" />
+                </LinearLayout>
 
-            <TextView
-                android:id="@+id/txt_myacct"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="115dp"
-                android:layout_marginStart="96dp"
-                android:layout_marginTop="20dp"
-                android:text="My Account"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView6"
-                app:layout_constraintTop_toBottomOf="@+id/btn_myacct"
-                app:layout_constraintVertical_bias="0.0" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight ="1"
 
-            <ImageButton
-                android:id="@+id/btn_library"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginStart="76dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/elibrary"
-                android:onClick="btn_lib"
-                app:layout_constraintEnd_toEndOf="@+id/textView6"
-                app:layout_constraintRight_toRightOf="@+id/textView6"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                    >
+                    <ImageButton
+                        android:id="@+id/btn_rest"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
 
-            <TextView
-                android:id="@+id/btn_lib"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="10dp"
-                android:text="e-Library"
-                android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_library" />
+                        android:background="@drawable/dining"
+                        android:onClick="btn_eateries"
+                        />
 
-            <ImageButton
-                android:id="@+id/btn_events"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@drawable/event"
-                android:onClick="btn_events_action"
-                app:layout_constraintLeft_toLeftOf="@+id/btn_myacct"
-                app:layout_constraintStart_toStartOf="@+id/btn_myacct"
-                app:layout_constraintTop_toTopOf="@+id/btn_library" />
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-            <TextView
-                android:id="@+id/event_title"
-                android:layout_width="69dp"
-                android:layout_height="30dp"
-                android:layout_marginBottom="115dp"
-                android:layout_marginStart="96dp"
-                android:layout_marginTop="20dp"
-                android:text="Events"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btn_lib"
-                app:layout_constraintTop_toBottomOf="@+id/btn_events"
-                app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintLeft_toRightOf="@+id/btn_lib"
-                android:layout_marginLeft="32dp" />
-        </android.support.constraint.ConstraintLayout>
+                        android:text="Dining"
+                        android:textSize="18dp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight ="1"
+                    >
+                    <ImageButton
+                        android:id="@+id/btn_events"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/event"
+                        android:onClick="btn_events_action"
+                        />
+
+                    <TextView
+                        android:id="@+id/event_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Event"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="105dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight ="1"
+                    >
+                    <ImageButton
+                        android:id="@+id/btn_library"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+
+
+                        android:background="@drawable/elibrary"
+                        android:onClick="btn_lib"
+                        />
+
+                    <TextView
+                        android:id="@+id/btn_lib"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="e-Library"
+                        android:textSize="18dp"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight ="1"
+
+                    >
+                    <ImageButton
+                        android:id="@+id/btn_myacct"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/login"
+                        android:onClick="btnCourseHomePage_onClick"
+                        />
+                    <TextView
+                        android:id="@+id/txt_myacct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:text="My Account"
+                        android:textSize="18dp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight ="1"
+                    >
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
     </android.support.v4.widget.NestedScrollView>
 
 </android.support.design.widget.CoordinatorLayout>
